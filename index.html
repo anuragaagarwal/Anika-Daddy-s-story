@@ -8,14 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #f2e8d5;
-    --paper-dark: #e8dbc0;
+    --paper: #faf1de;
+    --paper-dark: #f3e3c4;
     --ink: #4a3728;
     --ink-soft: #6b5644;
-    --rose: #c17b84;
-    --sage: #83916f;
-    --gold: #b8934d;
-    --tape: #e8d9a8;
+    --rose: #e0768a;
+    --sage: #6fa583;
+    --gold: #e0a63a;
+    --sky: #6fb3c7;
+    --coral: #f0876b;
+    --tape: #f4d675;
     --shadow: rgba(74, 55, 40, 0.25);
   }
 
@@ -31,8 +33,11 @@
     margin: 0;
     background: var(--paper);
     background-image:
-      radial-gradient(circle at 20% 30%, rgba(184, 147, 77, 0.06) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(131, 145, 111, 0.06) 0%, transparent 50%);
+      radial-gradient(circle at 15% 20%, rgba(224, 166, 58, 0.14) 0%, transparent 45%),
+      radial-gradient(circle at 85% 15%, rgba(240, 135, 107, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 80% 75%, rgba(111, 165, 131, 0.13) 0%, transparent 45%),
+      radial-gradient(circle at 15% 80%, rgba(111, 179, 199, 0.12) 0%, transparent 45%),
+      radial-gradient(circle at 50% 50%, rgba(224, 118, 138, 0.06) 0%, transparent 60%);
     font-family: 'Cormorant Garamond', serif;
     color: var(--ink);
     overflow-x: hidden;
@@ -104,7 +109,7 @@
 
   /* Table of contents */
   .toc-wrap {
-    max-width: 900px;
+    max-width: 780px;
     margin: 0 auto;
     padding: 80px 24px 60px;
   }
@@ -112,29 +117,77 @@
   .toc-title {
     text-align: center;
     font-family: 'Caveat', cursive;
-    font-size: clamp(2rem, 4.5vw, 2.8rem);
+    font-size: clamp(2.2rem, 5vw, 3rem);
     color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .toc-sub {
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-soft);
     margin-bottom: 40px;
+    font-size: 1.05rem;
   }
 
-  .toc-year {
-    margin-bottom: 26px;
-    padding-bottom: 22px;
-    border-bottom: 1px dashed rgba(184, 147, 77, 0.4);
+  .toc-years {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
   }
 
-  .toc-year:last-child { border-bottom: none; }
+  .toc-year-card {
+    background: #fffdf8;
+    border-radius: 10px;
+    padding: 26px 18px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 6px 16px var(--shadow);
+    border: 2px solid transparent;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    position: relative;
+  }
 
-  .toc-year-label {
-    display: inline-block;
-    font-family: 'Playfair Display', serif;
+  .toc-year-card:nth-child(4n+1) { border-color: rgba(224, 118, 138, 0.0); }
+  .toc-year-card:hover, .toc-year-card:focus-visible {
+    transform: translateY(-4px) rotate(-1deg);
+    box-shadow: 0 12px 26px var(--shadow);
+  }
+
+  .toc-year-card:nth-child(4n+1):hover { border-color: var(--rose); }
+  .toc-year-card:nth-child(4n+2):hover { border-color: var(--gold); }
+  .toc-year-card:nth-child(4n+3):hover { border-color: var(--sage); }
+  .toc-year-card:nth-child(4n+4):hover { border-color: var(--sky); }
+
+  .toc-year-card.open {
+    border-color: var(--gold);
+  }
+
+  .toc-year-num {
+    font-family: 'Caveat', cursive;
     font-weight: 700;
-    font-size: 1.5rem;
-    color: var(--rose);
-    margin-bottom: 12px;
+    font-size: 2.2rem;
+    color: var(--ink);
+    display: block;
   }
 
-  .toc-months {
+  .toc-year-count {
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .toc-months-panel {
+    display: none;
+    grid-column: 1 / -1;
+    background: rgba(255, 253, 248, 0.6);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: -4px;
+  }
+
+  .toc-months-panel.open {
     display: flex;
     flex-wrap: wrap;
     gap: 8px 10px;
@@ -145,17 +198,17 @@
     font-size: 0.95rem;
     color: var(--ink-soft);
     text-decoration: none;
-    padding: 5px 12px;
-    border: 1px solid rgba(74, 55, 40, 0.25);
-    border-radius: 3px;
-    background: rgba(255, 253, 248, 0.5);
+    padding: 6px 14px;
+    border: 1px solid rgba(74, 55, 40, 0.2);
+    border-radius: 20px;
+    background: #fffdf8;
     transition: background 0.2s, color 0.2s, border-color 0.2s;
   }
 
   .toc-month:hover, .toc-month:focus-visible {
-    background: var(--gold);
+    background: var(--coral);
     color: #fff;
-    border-color: var(--gold);
+    border-color: var(--coral);
   }
 
   /* Chapter sections */
@@ -261,9 +314,10 @@
     box-shadow: 0 2px 3px rgba(0,0,0,0.1);
   }
 
-  .polaroid:nth-child(3n) .tape { transform: translateX(-50%) rotate(3deg); background: #e8c4c9; }
-  .polaroid:nth-child(3n+1) .tape { background: var(--tape); }
-  .polaroid:nth-child(3n+2) .tape { background: #d3ddc4; }
+  .polaroid:nth-child(4n) .tape { transform: translateX(-50%) rotate(3deg); background: var(--rose); opacity: 0.55; }
+  .polaroid:nth-child(4n+1) .tape { background: var(--tape); }
+  .polaroid:nth-child(4n+2) .tape { background: var(--sage); opacity: 0.5; }
+  .polaroid:nth-child(4n+3) .tape { background: var(--sky); opacity: 0.5; }
 
   .chapter:nth-of-type(even) { background: var(--paper-dark); }
 
@@ -328,6 +382,87 @@
     opacity: 0.75;
   }
 
+  /* Lightbox */
+  .polaroid { cursor: zoom-in; }
+
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(30, 20, 12, 0.88);
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .lightbox.open { display: flex; }
+
+  .lightbox-inner {
+    max-width: 900px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fffdf8;
+    padding: 20px 20px 26px;
+    border-radius: 6px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+
+  .lightbox-inner img {
+    max-width: 100%;
+    max-height: 72vh;
+    object-fit: contain;
+    display: block;
+  }
+
+  .lightbox-caption {
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    color: var(--ink);
+    margin-top: 16px;
+    text-align: center;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 22px;
+    right: 28px;
+    font-size: 2.2rem;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+    padding: 6px 10px;
+  }
+
+  .lightbox-close:hover, .lightbox-close:focus-visible { color: var(--gold); }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    border: none;
+    font-size: 1.8rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .lightbox-nav:hover, .lightbox-nav:focus-visible { background: rgba(255,255,255,0.3); }
+  .lightbox-prev { left: 18px; }
+  .lightbox-next { right: 18px; }
+
+  @media (max-width: 600px) {
+    .lightbox-nav { width: 40px; height: 40px; font-size: 1.4rem; }
+  }
+
   /* Back to top */
   .top-link {
     display: block;
@@ -370,10 +505,25 @@
 
 <div class="toc-wrap" id="toc">
   <h2 class="toc-title">A note for every month</h2>
-
-      <div class="toc-year">
-        <span class="toc-year-label">2023</span>
-        <div class="toc-months">
+  <p class="toc-sub">tap a year to see its months</p>
+  <div class="toc-years">
+      <div class="toc-year-card" data-year="2023" tabindex="0" role="button" aria-expanded="false">
+        <span class="toc-year-num">2023</span>
+        <span class="toc-year-count">12 months</span>
+      </div>
+      <div class="toc-year-card" data-year="2024" tabindex="0" role="button" aria-expanded="false">
+        <span class="toc-year-num">2024</span>
+        <span class="toc-year-count">12 months</span>
+      </div>
+      <div class="toc-year-card" data-year="2025" tabindex="0" role="button" aria-expanded="false">
+        <span class="toc-year-num">2025</span>
+        <span class="toc-year-count">12 months</span>
+      </div>
+      <div class="toc-year-card" data-year="2026" tabindex="0" role="button" aria-expanded="false">
+        <span class="toc-year-num">2026</span>
+        <span class="toc-year-count">8 months</span>
+      </div>
+      <div class="toc-months-panel" data-year-panel="2023">
           <a href="#m1" class="toc-month">Jan</a>
           <a href="#m2" class="toc-month">Feb</a>
           <a href="#m3" class="toc-month">Mar</a>
@@ -386,12 +536,8 @@
           <a href="#m10" class="toc-month">Oct</a>
           <a href="#m11" class="toc-month">Nov</a>
           <a href="#m12" class="toc-month">Dec</a>
-        </div>
       </div>
-
-      <div class="toc-year">
-        <span class="toc-year-label">2024</span>
-        <div class="toc-months">
+      <div class="toc-months-panel" data-year-panel="2024">
           <a href="#m13" class="toc-month">Jan</a>
           <a href="#m14" class="toc-month">Feb</a>
           <a href="#m15" class="toc-month">Mar</a>
@@ -404,12 +550,8 @@
           <a href="#m22" class="toc-month">Oct</a>
           <a href="#m23" class="toc-month">Nov</a>
           <a href="#m24" class="toc-month">Dec</a>
-        </div>
       </div>
-
-      <div class="toc-year">
-        <span class="toc-year-label">2025</span>
-        <div class="toc-months">
+      <div class="toc-months-panel" data-year-panel="2025">
           <a href="#m25" class="toc-month">Jan</a>
           <a href="#m26" class="toc-month">Feb</a>
           <a href="#m27" class="toc-month">Mar</a>
@@ -422,12 +564,8 @@
           <a href="#m34" class="toc-month">Oct</a>
           <a href="#m35" class="toc-month">Nov</a>
           <a href="#m36" class="toc-month">Dec</a>
-        </div>
       </div>
-
-      <div class="toc-year">
-        <span class="toc-year-label">2026</span>
-        <div class="toc-months">
+      <div class="toc-months-panel" data-year-panel="2026">
           <a href="#m37" class="toc-month">Jan</a>
           <a href="#m38" class="toc-month">Feb</a>
           <a href="#m39" class="toc-month">Mar</a>
@@ -436,9 +574,9 @@
           <a href="#m42" class="toc-month">Jun</a>
           <a href="#m43" class="toc-month">Jul</a>
           <a href="#m44" class="toc-month">Aug</a>
-        </div>
-      </div></div>
-
+      </div>
+  </div>
+</div>
 <section class="chapter" id="m1">
   <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
   <p class="chapter-eyebrow">Newborn</p>
@@ -1054,6 +1192,16 @@
     <p class="letter-hint">click the note above to edit it directly</p>
   </div>
 </section>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo">&#8249;</button>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next photo">&#8250;</button>
+  <div class="lightbox-inner">
+    <img id="lightbox-img" src="" alt="">
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+</div>
+
 <a href="#cover" class="top-link">back to the top</a>
 <footer>Anika &amp; Daddy's Story</footer>
 
@@ -1247,19 +1395,96 @@ const photosByMonth = {
   ]
 };
 
+function setupYearToggles() {
+  document.querySelectorAll('.toc-year-card').forEach(card => {
+    const year = card.getAttribute('data-year');
+    const panel = document.querySelector(`.toc-months-panel[data-year-panel="${year}"]`);
+    const toggle = () => {
+      const isOpen = panel.classList.toggle('open');
+      card.classList.toggle('open', isOpen);
+      card.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
+    card.addEventListener('click', toggle);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+}
+
+setupYearToggles();
+
 function renderScrapbooks() {
   document.querySelectorAll('.scrapbook[data-month]').forEach(grid => {
     const monthId = grid.getAttribute('data-month');
     const photos = photosByMonth[monthId] || [];
-    grid.innerHTML = photos.map(p => `
-      <div class="polaroid">
+    grid.innerHTML = photos.map((p, i) => `
+      <div class="polaroid" data-month="${monthId}" data-index="${i}" tabindex="0" role="button" aria-label="View photo: ${p.caption}">
         <div class="tape"></div>
         <div class="polaroid-photo">${p.src ? `<img src="${p.src}" alt="${p.caption}">` : 'photo placeholder'}</div>
         <div class="polaroid-caption">${p.caption}</div>
       </div>
     `).join('');
   });
+
+  document.querySelectorAll('.polaroid').forEach(el => {
+    const openThis = () => {
+      const monthId = el.getAttribute('data-month');
+      const idx = parseInt(el.getAttribute('data-index'), 10);
+      if ((photosByMonth[monthId] || [])[idx]?.src) {
+        openLightbox(monthId, idx);
+      }
+    };
+    el.addEventListener('click', openThis);
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openThis(); }
+    });
+  });
 }
+
+let lightboxMonth = null;
+let lightboxIndex = 0;
+
+function openLightbox(monthId, index) {
+  lightboxMonth = monthId;
+  lightboxIndex = index;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function updateLightbox() {
+  const photos = photosByMonth[lightboxMonth] || [];
+  const photo = photos[lightboxIndex];
+  if (!photo) return;
+  document.getElementById('lightbox-img').src = photo.src;
+  document.getElementById('lightbox-img').alt = photo.caption;
+  document.getElementById('lightbox-caption').textContent = photo.caption;
+}
+
+function lightboxStep(dir) {
+  const photos = photosByMonth[lightboxMonth] || [];
+  if (!photos.length) return;
+  lightboxIndex = (lightboxIndex + dir + photos.length) % photos.length;
+  updateLightbox();
+}
+
+document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+document.getElementById('lightbox-prev').addEventListener('click', () => lightboxStep(-1));
+document.getElementById('lightbox-next').addEventListener('click', () => lightboxStep(1));
+document.getElementById('lightbox').addEventListener('click', (e) => {
+  if (e.target.id === 'lightbox') closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') lightboxStep(-1);
+  if (e.key === 'ArrowRight') lightboxStep(1);
+});
 
 renderScrapbooks();
 </script>
