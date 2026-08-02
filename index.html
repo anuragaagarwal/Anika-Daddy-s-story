@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anika & Daddy's Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f2e8d5;
+    --paper-dark: #e8dbc0;
+    --ink: #4a3728;
+    --ink-soft: #6b5644;
+    --rose: #c17b84;
+    --sage: #83916f;
+    --gold: #b8934d;
+    --tape: #e8d9a8;
+    --shadow: rgba(74, 55, 40, 0.25);
+  }
+
+  * { box-sizing: border-box; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(184, 147, 77, 0.06) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(131, 145, 111, 0.06) 0%, transparent 50%);
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .cover {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 24px;
+    position: relative;
+  }
+
+  .cover-heart { font-size: 28px; color: var(--rose); margin-bottom: 18px; opacity: 0.85; }
+
+  .cover h1 {
+    font-family: 'Caveat', cursive;
+    font-size: clamp(3.2rem, 9vw, 6.5rem);
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.05;
+    color: var(--ink);
+    text-shadow: 2px 2px 0 rgba(184, 147, 77, 0.15);
+  }
+
+  .cover .and {
+    font-size: 0.5em;
+    color: var(--rose);
+    display: inline-block;
+    transform: rotate(-4deg);
+    margin: 0 6px;
+  }
+
+  .cover-sub {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
+    color: var(--ink-soft);
+    margin-top: 18px;
+    letter-spacing: 0.02em;
+  }
+
+  .cover-scroll {
+    margin-top: 60px;
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.7;
+    animation: bob 2.4s ease-in-out infinite;
+  }
+
+  @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+
+  .cover-scroll::after { content: "↓"; display: block; font-size: 1.3rem; margin-top: 6px; }
+
+  /* Table of contents */
+  .toc-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 24px 60px;
+  }
+
+  .toc-title {
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-size: clamp(2rem, 4.5vw, 2.8rem);
+    color: var(--ink);
+    margin-bottom: 40px;
+  }
+
+  .toc-year {
+    margin-bottom: 26px;
+    padding-bottom: 22px;
+    border-bottom: 1px dashed rgba(184, 147, 77, 0.4);
+  }
+
+  .toc-year:last-child { border-bottom: none; }
+
+  .toc-year-label {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--rose);
+    margin-bottom: 12px;
+  }
+
+  .toc-months {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+
+  .toc-month {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid rgba(74, 55, 40, 0.25);
+    border-radius: 3px;
+    background: rgba(255, 253, 248, 0.5);
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+  }
+
+  .toc-month:hover, .toc-month:focus-visible {
+    background: var(--gold);
+    color: #fff;
+    border-color: var(--gold);
+  }
+
+  /* Chapter sections */
+  .chapter {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 90px 24px 40px;
+    position: relative;
+    scroll-margin-top: 20px;
+  }
+
+  .chapter-divider { display: flex; align-items: center; justify-content: center; gap: 18px; margin-bottom: 50px; }
+  .chapter-divider .line { height: 1px; width: 60px; background: linear-gradient(to right, transparent, var(--gold)); }
+  .chapter-divider .line.right { background: linear-gradient(to left, transparent, var(--gold)); }
+  .chapter-divider .mark { color: var(--gold); font-size: 1.1rem; }
+
+  .chapter-eyebrow {
+    text-align: center;
+    font-size: 0.85rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 6px;
+  }
+
+  .chapter-title {
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    color: var(--ink);
+    margin: 0 0 14px;
+  }
+
+  .chapter-note {
+    max-width: 560px;
+    margin: 0 auto 46px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .scrapbook {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 50px 30px;
+    padding: 10px 0 20px;
+  }
+
+  .polaroid {
+    background: #fffdf8;
+    padding: 14px 14px 0;
+    box-shadow: 0 6px 18px var(--shadow), 0 2px 4px rgba(0,0,0,0.08);
+    position: relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .polaroid:hover { transform: scale(1.04) rotate(0deg) !important; box-shadow: 0 14px 30px var(--shadow), 0 4px 8px rgba(0,0,0,0.1); z-index: 5; }
+
+  .polaroid:nth-child(4n+1) { transform: rotate(-3.5deg); }
+  .polaroid:nth-child(4n+2) { transform: rotate(2.5deg); }
+  .polaroid:nth-child(4n+3) { transform: rotate(-1.5deg); }
+  .polaroid:nth-child(4n+4) { transform: rotate(3.5deg); }
+
+  .polaroid-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, #e0d4b8 0%, #cbb98f 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8a7654;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 12px;
+    overflow: hidden;
+  }
+
+  .polaroid-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .polaroid-caption {
+    padding: 14px 6px 20px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.35rem;
+    color: var(--ink);
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .tape {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 70px;
+    height: 26px;
+    background: var(--tape);
+    opacity: 0.75;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+  }
+
+  .polaroid:nth-child(3n) .tape { transform: translateX(-50%) rotate(3deg); background: #e8c4c9; }
+  .polaroid:nth-child(3n+1) .tape { background: var(--tape); }
+  .polaroid:nth-child(3n+2) .tape { background: #d3ddc4; }
+
+  .chapter:nth-of-type(even) { background: var(--paper-dark); }
+
+  /* End-of-chapter letter (to Anika) */
+  .letter {
+    max-width: 640px;
+    margin: 50px auto 0;
+    padding: 40px 36px;
+    background: #fffdf8;
+    box-shadow: 0 8px 22px var(--shadow);
+    position: relative;
+    transform: rotate(-0.5deg);
+  }
+
+  .letter::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 40px;
+    width: 80px;
+    height: 26px;
+    background: var(--tape);
+    opacity: 0.7;
+    transform: rotate(-4deg);
+  }
+
+  .letter h3 {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    color: var(--rose);
+    margin: 0 0 16px;
+    text-align: center;
+  }
+
+  .letter p {
+    font-size: 1.1rem;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    margin: 0 0 12px;
+    outline: none;
+  }
+
+  .letter p[contenteditable="true"]:focus {
+    background: rgba(184, 147, 77, 0.08);
+    border-radius: 4px;
+  }
+
+  .letter .sign {
+    text-align: right;
+    font-family: 'Caveat', cursive;
+    font-size: 1.6rem;
+    color: var(--ink);
+    margin-top: 18px;
+  }
+
+  .letter-hint {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--sage);
+    letter-spacing: 0.05em;
+    margin-top: 10px;
+    opacity: 0.75;
+  }
+
+  /* Back to top */
+  .top-link {
+    display: block;
+    text-align: center;
+    margin: 60px auto 100px;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    opacity: 0.7;
+  }
+  .top-link:hover { opacity: 1; }
+
+  footer {
+    text-align: center;
+    padding: 40px 24px 70px;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    opacity: 0.6;
+    letter-spacing: 0.05em;
+  }
+
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--rose); outline-offset: 3px; }
+
+  @media (max-width: 720px) {
+    .chapter { padding: 60px 18px 20px; }
+    .letter { padding: 30px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="cover" id="cover">
+  <div class="cover-heart">❤</div>
+  <h1>Anika<span class="and">&amp;</span>Daddy's<br>Story</h1>
+  <p class="cover-sub">a scrapbook of the years so far</p>
+  <div class="cover-scroll">begin the story</div>
+</section>
+
+<div class="toc-wrap" id="toc">
+  <h2 class="toc-title">A note for every month</h2>
+
+      <div class="toc-year">
+        <span class="toc-year-label">2023</span>
+        <div class="toc-months">
+          <a href="#m1" class="toc-month">Jan</a>
+          <a href="#m2" class="toc-month">Feb</a>
+          <a href="#m3" class="toc-month">Mar</a>
+          <a href="#m4" class="toc-month">Apr</a>
+          <a href="#m5" class="toc-month">May</a>
+          <a href="#m6" class="toc-month">Jun</a>
+          <a href="#m7" class="toc-month">Jul</a>
+          <a href="#m8" class="toc-month">Aug</a>
+          <a href="#m9" class="toc-month">Sep</a>
+          <a href="#m10" class="toc-month">Oct</a>
+          <a href="#m11" class="toc-month">Nov</a>
+          <a href="#m12" class="toc-month">Dec</a>
+        </div>
+      </div>
+
+      <div class="toc-year">
+        <span class="toc-year-label">2024</span>
+        <div class="toc-months">
+          <a href="#m13" class="toc-month">Jan</a>
+          <a href="#m14" class="toc-month">Feb</a>
+          <a href="#m15" class="toc-month">Mar</a>
+          <a href="#m16" class="toc-month">Apr</a>
+          <a href="#m17" class="toc-month">May</a>
+          <a href="#m18" class="toc-month">Jun</a>
+          <a href="#m19" class="toc-month">Jul</a>
+          <a href="#m20" class="toc-month">Aug</a>
+          <a href="#m21" class="toc-month">Sep</a>
+          <a href="#m22" class="toc-month">Oct</a>
+          <a href="#m23" class="toc-month">Nov</a>
+          <a href="#m24" class="toc-month">Dec</a>
+        </div>
+      </div>
+
+      <div class="toc-year">
+        <span class="toc-year-label">2025</span>
+        <div class="toc-months">
+          <a href="#m25" class="toc-month">Jan</a>
+          <a href="#m26" class="toc-month">Feb</a>
+          <a href="#m27" class="toc-month">Mar</a>
+          <a href="#m28" class="toc-month">Apr</a>
+          <a href="#m29" class="toc-month">May</a>
+          <a href="#m30" class="toc-month">Jun</a>
+          <a href="#m31" class="toc-month">Jul</a>
+          <a href="#m32" class="toc-month">Aug</a>
+          <a href="#m33" class="toc-month">Sep</a>
+          <a href="#m34" class="toc-month">Oct</a>
+          <a href="#m35" class="toc-month">Nov</a>
+          <a href="#m36" class="toc-month">Dec</a>
+        </div>
+      </div>
+
+      <div class="toc-year">
+        <span class="toc-year-label">2026</span>
+        <div class="toc-months">
+          <a href="#m37" class="toc-month">Jan</a>
+          <a href="#m38" class="toc-month">Feb</a>
+          <a href="#m39" class="toc-month">Mar</a>
+          <a href="#m40" class="toc-month">Apr</a>
+          <a href="#m41" class="toc-month">May</a>
+          <a href="#m42" class="toc-month">Jun</a>
+          <a href="#m43" class="toc-month">Jul</a>
+          <a href="#m44" class="toc-month">Aug</a>
+        </div>
+      </div></div>
+
+<section class="chapter" id="m1">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">Newborn</p>
+  <h2 class="chapter-title">January 2023</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m1" data-month="m1"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">The month you arrived. There aren't really words for it yet — just that everything changed, in the best way.</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m2">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1 month old</p>
+  <h2 class="chapter-title">February 2023</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m2" data-month="m2"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — write about what this month was like: the small things you noticed, what made you laugh, what worried you.</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m3">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2 months old</p>
+  <h2 class="chapter-title">March 2023</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m3" data-month="m3"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — write about what this month was like: the small things you noticed, what made you laugh, what worried you.</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m4">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">3 months old</p>
+  <h2 class="chapter-title">April 2023</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m4" data-month="m4"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — write about what this month was like: the small things you noticed, what made you laugh, what worried you.</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m5">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">4 months old</p>
+  <h2 class="chapter-title">May 2023</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m5" data-month="m5"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — write about what this month was like: the small things you noticed, what made you laugh, what worried you.</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m6">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">5 months old</p>
+  <h2 class="chapter-title">June 2023</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m6" data-month="m6"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — write about what this month was like: the small things you noticed, what made you laugh, what worried you.</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m7">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">6 months old</p>
+  <h2 class="chapter-title">July 2023</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m7" data-month="m7"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — you were becoming more and more of a person this month. What did you discover about her?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m8">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">7 months old</p>
+  <h2 class="chapter-title">August 2023</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m8" data-month="m8"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — you were becoming more and more of a person this month. What did you discover about her?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m9">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">8 months old</p>
+  <h2 class="chapter-title">September 2023</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m9" data-month="m9"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — you were becoming more and more of a person this month. What did you discover about her?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m10">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">9 months old</p>
+  <h2 class="chapter-title">October 2023</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m10" data-month="m10"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — you were becoming more and more of a person this month. What did you discover about her?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m11">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">10 months old</p>
+  <h2 class="chapter-title">November 2023</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m11" data-month="m11"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — you were becoming more and more of a person this month. What did you discover about her?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m12">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">11 months old</p>
+  <h2 class="chapter-title">December 2023</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m12" data-month="m12"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — you were becoming more and more of a person this month. What did you discover about her?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m13">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1 year old</p>
+  <h2 class="chapter-title">January 2024</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m13" data-month="m13"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — the toddler years. What new word, step, or habit stood out this month?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m14">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1y 1m old</p>
+  <h2 class="chapter-title">February 2024</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m14" data-month="m14"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — the toddler years. What new word, step, or habit stood out this month?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m15">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1y 2m old</p>
+  <h2 class="chapter-title">March 2024</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m15" data-month="m15"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — the toddler years. What new word, step, or habit stood out this month?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m16">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1y 3m old</p>
+  <h2 class="chapter-title">April 2024</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m16" data-month="m16"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — the toddler years. What new word, step, or habit stood out this month?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m17">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1y 4m old</p>
+  <h2 class="chapter-title">May 2024</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m17" data-month="m17"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — the toddler years. What new word, step, or habit stood out this month?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m18">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1y 5m old</p>
+  <h2 class="chapter-title">June 2024</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m18" data-month="m18"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — the toddler years. What new word, step, or habit stood out this month?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m19">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1y 6m old</p>
+  <h2 class="chapter-title">July 2024</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m19" data-month="m19"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — the toddler years. What new word, step, or habit stood out this month?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m20">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1y 7m old</p>
+  <h2 class="chapter-title">August 2024</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m20" data-month="m20"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — the toddler years. What new word, step, or habit stood out this month?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m21">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1y 8m old</p>
+  <h2 class="chapter-title">September 2024</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m21" data-month="m21"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — the toddler years. What new word, step, or habit stood out this month?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m22">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1y 9m old</p>
+  <h2 class="chapter-title">October 2024</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m22" data-month="m22"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — the toddler years. What new word, step, or habit stood out this month?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m23">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1y 10m old</p>
+  <h2 class="chapter-title">November 2024</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m23" data-month="m23"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — the toddler years. What new word, step, or habit stood out this month?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m24">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">1y 11m old</p>
+  <h2 class="chapter-title">December 2024</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m24" data-month="m24"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — the toddler years. What new word, step, or habit stood out this month?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m25">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2 years old</p>
+  <h2 class="chapter-title">January 2025</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m25" data-month="m25"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m26">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2y 1m old</p>
+  <h2 class="chapter-title">February 2025</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m26" data-month="m26"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m27">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2y 2m old</p>
+  <h2 class="chapter-title">March 2025</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m27" data-month="m27"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m28">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2y 3m old</p>
+  <h2 class="chapter-title">April 2025</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m28" data-month="m28"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m29">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2y 4m old</p>
+  <h2 class="chapter-title">May 2025</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m29" data-month="m29"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m30">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2y 5m old</p>
+  <h2 class="chapter-title">June 2025</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m30" data-month="m30"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m31">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2y 6m old</p>
+  <h2 class="chapter-title">July 2025</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m31" data-month="m31"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m32">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2y 7m old</p>
+  <h2 class="chapter-title">August 2025</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m32" data-month="m32"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m33">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2y 8m old</p>
+  <h2 class="chapter-title">September 2025</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m33" data-month="m33"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m34">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2y 9m old</p>
+  <h2 class="chapter-title">October 2025</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m34" data-month="m34"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m35">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2y 10m old</p>
+  <h2 class="chapter-title">November 2025</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m35" data-month="m35"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m36">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">2y 11m old</p>
+  <h2 class="chapter-title">December 2025</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m36" data-month="m36"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m37">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">3 years old</p>
+  <h2 class="chapter-title">January 2026</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m37" data-month="m37"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m38">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">3y 1m old</p>
+  <h2 class="chapter-title">February 2026</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m38" data-month="m38"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m39">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">3y 2m old</p>
+  <h2 class="chapter-title">March 2026</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m39" data-month="m39"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m40">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">3y 3m old</p>
+  <h2 class="chapter-title">April 2026</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m40" data-month="m40"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m41">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">3y 4m old</p>
+  <h2 class="chapter-title">May 2026</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m41" data-month="m41"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m42">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">3y 5m old</p>
+  <h2 class="chapter-title">June 2026</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m42" data-month="m42"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m43">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">3y 6m old</p>
+  <h2 class="chapter-title">July 2026</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m43" data-month="m43"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+
+<section class="chapter" id="m44">
+  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+  <p class="chapter-eyebrow">3y 7m old</p>
+  <h2 class="chapter-title">August 2026</h2>
+  <p class="chapter-note">Add this month's photos and captions here.</p>
+  <div class="scrapbook" id="grid-m44" data-month="m44"></div>
+  <div class="letter">
+    <h3>To Anika</h3>
+    <p contenteditable="true">Placeholder note — what was she into this month? What did she say that surprised you?</p>
+    <div class="sign">— Daddy</div>
+    <p class="letter-hint">click the note above to edit it directly</p>
+  </div>
+</section>
+<a href="#cover" class="top-link">back to the top</a>
+<footer>Anika &amp; Daddy's Story</footer>
+
+
+<script>
+const photosByMonth = {
+  m1: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m2: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m3: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m4: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m5: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m6: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m7: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m8: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m9: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m10: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m11: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m12: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m13: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m14: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m15: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m16: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m17: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m18: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m19: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m20: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m21: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m22: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m23: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m24: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m25: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m26: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m27: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m28: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m29: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m30: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m31: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m32: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m33: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m34: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m35: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m36: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m37: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m38: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m39: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m40: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m41: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m42: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m43: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ],
+  m44: [
+    { src: "", caption: "caption goes here" },
+    { src: "", caption: "caption goes here" }
+  ]
+};
+
+function renderScrapbooks() {
+  document.querySelectorAll('.scrapbook[data-month]').forEach(grid => {
+    const monthId = grid.getAttribute('data-month');
+    const photos = photosByMonth[monthId] || [];
+    grid.innerHTML = photos.map(p => `
+      <div class="polaroid">
+        <div class="tape"></div>
+        <div class="polaroid-photo">${p.src ? `<img src="${p.src}" alt="${p.caption}">` : 'photo placeholder'}</div>
+        <div class="polaroid-caption">${p.caption}</div>
+      </div>
+    `).join('');
+  });
+}
+
+renderScrapbooks();
+</script>
+
+</body>
+</html>
