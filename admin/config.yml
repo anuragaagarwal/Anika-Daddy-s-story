@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "images"
+
+site_url: https://anikagarwal.com
+
+collections:
+  - name: "months"
+    label: "Monthly Chapters"
+    folder: "content/months"
+    create: false
+    delete: false
+    identifier_field: "title"
+    format: "json"
+    slug: "{{fields.id}}"
+    summary: "{{title}} — {{eyebrow}}"
+    fields:
+      - { label: "Month ID (do not change)", name: "id", widget: "string" }
+      - { label: "Age / Eyebrow label", name: "eyebrow", widget: "string" }
+      - { label: "Chapter Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
+      - label: "To Anika — closing note"
+        name: "note"
+        widget: "text"
+        hint: "You can use <br><br> for paragraph breaks."
+      - label: "Photos"
+        name: "photos"
+        widget: "list"
+        allow_add: true
+        summary: "{{fields.caption}}"
+        fields:
+          - { label: "Photo", name: "src", widget: "image" }
+          - { label: "Caption", name: "caption", widget: "string" }

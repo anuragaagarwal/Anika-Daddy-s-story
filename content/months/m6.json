@@ -1,0 +1,17 @@
+{
+  "id": "m6",
+  "eyebrow": "5 months old",
+  "title": "June 2023",
+  "subtitle": "Add this month's photos and captions here.",
+  "note": "Placeholder note — write about what this month was like: the small things you noticed, what made you laugh, what worried you.",
+  "photos": [
+    {
+      "src": "",
+      "caption": "caption goes here"
+    },
+    {
+      "src": "",
+      "caption": "caption goes here"
+    }
+  ]
+}
