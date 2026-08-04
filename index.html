@@ -517,6 +517,80 @@
     color: var(--ink-soft);
   }
 
+  /* Letters I Couldn't Say — entry card */
+  .letters-entry {
+    max-width: 480px;
+    margin: 0 auto 24px;
+    padding: 18px 24px;
+    background: linear-gradient(135deg, var(--lavender) 0%, var(--rose) 100%);
+    border-radius: 14px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .letters-entry:hover, .letters-entry:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px var(--shadow);
+  }
+
+  .letters-entry-icon {
+    display: block;
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+  }
+
+  .letters-entry-title {
+    display: block;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #fff;
+  }
+
+  .letters-entry-sub {
+    display: block;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: rgba(255,255,255,0.9);
+    margin-top: 2px;
+  }
+
+  /* Letters modal content */
+  .letters-modal-inner { max-width: 620px; }
+
+  .letters-list {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .letter-entry {
+    padding-bottom: 22px;
+    border-bottom: 1px dashed rgba(92, 53, 71, 0.2);
+  }
+
+  .letter-entry:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .letter-entry-date {
+    display: block;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--lavender);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .letter-entry-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--ink);
+    font-style: italic;
+  }
+
   .scrapbook {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -767,6 +841,11 @@
 </section>
 
 <div class="toc-wrap" id="toc">
+  <div class="letters-entry" id="letters-entry" tabindex="0" role="button" aria-label="Open Letters I Couldn't Say">
+    <span class="letters-entry-icon">💌</span>
+    <span class="letters-entry-title">Letters I Couldn't Say</span>
+    <span class="letters-entry-sub">small things I thought of you, between the months</span>
+  </div>
   <p class="toc-sub">tap a year to see its months</p>
   <div class="toc-years">
       <div class="toc-year-card" data-year="2023" tabindex="0" role="button" aria-expanded="false">
@@ -846,6 +925,9 @@
 <div class="journal-modal" id="journal-modal" role="dialog" aria-modal="true" aria-label="Personal journal entry">
   <div class="journal-modal-inner" id="journal-modal-inner"></div>
 </div>
+<div class="journal-modal" id="letters-modal" role="dialog" aria-modal="true" aria-label="Letters I couldn't say">
+  <div class="journal-modal-inner letters-modal-inner" id="letters-modal-inner"></div>
+</div>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
   <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
   <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo">&#8249;</button>
@@ -863,6 +945,7 @@
 <script>
 const MONTH_IDS = Array.from({length: 44}, (_, i) => `m${i+1}`);
 let monthsData = {};
+let lettersData = [];
 
 async function loadMonths() {
   const results = await Promise.all(
@@ -873,6 +956,44 @@ async function loadMonths() {
     )
   );
   MONTH_IDS.forEach((id, i) => { if (results[i]) monthsData[id] = results[i]; });
+}
+
+async function loadLetters() {
+  try {
+    const r = await fetch('content/letters/letters.json');
+    if (r.ok) {
+      const data = await r.json();
+      lettersData = data.letters || [];
+    }
+  } catch (e) { lettersData = []; }
+}
+
+function openLetters() {
+  const modal = document.getElementById('letters-modal');
+  const inner = document.getElementById('letters-modal-inner');
+  const entries = [...lettersData].reverse();
+  const listHtml = entries.length
+    ? entries.map(l => `
+        <div class="letter-entry">
+          ${l.date ? `<span class="letter-entry-date">${l.date}</span>` : ''}
+          <p class="letter-entry-text">${l.text || ''}</p>
+        </div>
+      `).join('')
+    : `<p class="journal-empty">No letters written yet.</p>`;
+  inner.innerHTML = `
+    <button class="journal-modal-close" id="letters-modal-close" aria-label="Close">&times;</button>
+    <p class="journal-eyebrow">Letters I Couldn't Say</p>
+    <h2 class="journal-title">small things, between the months</h2>
+    <div class="letters-list">${listHtml}</div>
+  `;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('letters-modal-close').addEventListener('click', closeLetters);
+}
+
+function closeLetters() {
+  document.getElementById('letters-modal').classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 function renderChapters() {
@@ -955,8 +1076,19 @@ function setupChapterToggles() {
     });
   });
 
+  const lettersEntry = document.getElementById('letters-entry');
+  if (lettersEntry) {
+    lettersEntry.addEventListener('click', openLetters);
+    lettersEntry.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLetters(); }
+    });
+  }
+
   document.getElementById('month-modal').addEventListener('click', (e) => {
     if (e.target.id === 'month-modal') closeMonthModal();
+  });
+  document.getElementById('letters-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'letters-modal') closeLetters();
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && document.getElementById('month-modal').classList.contains('open')) {
@@ -964,6 +1096,9 @@ function setupChapterToggles() {
     }
     if (e.key === 'Escape' && document.getElementById('journal-modal').classList.contains('open')) {
       closeJournal();
+    }
+    if (e.key === 'Escape' && document.getElementById('letters-modal').classList.contains('open')) {
+      closeLetters();
     }
   });
 }
@@ -1079,7 +1214,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 (async function init() {
-  await loadMonths();
+  await Promise.all([loadMonths(), loadLetters()]);
   renderChapters();
   setupChapterToggles();
   setupYearToggles();

@@ -39,3 +39,19 @@ collections:
         fields:
           - { label: "Photo", name: "src", widget: "image" }
           - { label: "Caption", name: "caption", widget: "string" }
+
+  - name: "letters"
+    label: "Letters I Couldn't Say"
+    files:
+      - name: "letters"
+        label: "Letters"
+        file: "content/letters/letters.json"
+        fields:
+          - label: "Letters"
+            name: "letters"
+            widget: "list"
+            allow_add: true
+            summary: "{{fields.date}} — {{fields.text}}"
+            fields:
+              - { label: "Date (optional, e.g. March 2024)", name: "date", widget: "string", required: false }
+              - { label: "Letter text", name: "text", widget: "text" }
