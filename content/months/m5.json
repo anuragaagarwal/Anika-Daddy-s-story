@@ -1,18 +1,90 @@
 {
   "id": "m5",
   "eyebrow": "4 months old",
-  "title": "May 2023",
-  "subtitle": "Add this month's photos and captions here.",
+  "title": "A New Yorker is Born",
+  "subtitle": "May 2023",
   "note": "Placeholder note — write about what this month was like: the small things you noticed, what made you laugh, what worried you.",
   "journal": "",
   "photos": [
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/may2023-01.jpeg",
+      "caption": "temple visit with Mommy and Daddy"
     },
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/may2023-02.jpeg",
+      "caption": "fresh out of the bath, big smiles"
+    },
+    {
+      "src": "images/may2023-03.jpeg",
+      "caption": "four months old, celebrating with cake"
+    },
+    {
+      "src": "images/may2023-04.jpeg",
+      "caption": "cozy in unicorn pajamas"
+    },
+    {
+      "src": "images/may2023-05.jpeg",
+      "caption": "cheek to cheek on a walk"
+    },
+    {
+      "src": "images/may2023-06.jpeg",
+      "caption": "a blessing at the temple"
+    },
+    {
+      "src": "images/may2023-07.jpeg",
+      "caption": "surrounded by Mommy's makeup collection"
+    },
+    {
+      "src": "images/may2023-08.jpeg",
+      "caption": "with a new friend"
+    },
+    {
+      "src": "images/may2023-09.jpeg",
+      "caption": "meeting more friends"
+    },
+    {
+      "src": "images/may2023-10.jpeg",
+      "caption": "Happy Birthday Daddy, from your best present"
+    },
+    {
+      "src": "images/may2023-11.jpeg",
+      "caption": "meeting friends of the family"
+    },
+    {
+      "src": "images/may2023-12.jpeg",
+      "caption": "Our First Mother's Day"
+    },
+    {
+      "src": "images/may2023-13.jpeg",
+      "caption": "matching mommy in pink"
+    },
+    {
+      "src": "images/may2023-14.jpeg",
+      "caption": "meeting more family friends"
+    },
+    {
+      "src": "images/may2023-15.jpeg",
+      "caption": "under the Brooklyn Bridge, second visit"
+    },
+    {
+      "src": "images/may2023-16.jpeg",
+      "caption": "wrapped up with Daddy"
+    },
+    {
+      "src": "images/may2023-17.jpeg",
+      "caption": "getting to know new faces"
+    },
+    {
+      "src": "images/may2023-18.jpeg",
+      "caption": "story time on the play mat"
+    },
+    {
+      "src": "images/may2023-19.jpeg",
+      "caption": "taking in the view of the bridge"
+    },
+    {
+      "src": "images/may2023-20.jpeg",
+      "caption": "just us"
     }
   ]
 }
