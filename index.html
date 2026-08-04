@@ -388,6 +388,135 @@
   .month-modal-inner .chapter-title { font-size: clamp(2.2rem, 5vw, 3.2rem); margin: 4px 0 10px; }
   .month-modal-inner .chapter-note { max-width: 560px; font-size: 1.05rem; margin-bottom: 34px; }
 
+  /* Journal icon on card thumbnail */
+  .journal-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    border: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, background 0.2s ease;
+    z-index: 2;
+  }
+
+  .journal-icon:hover, .journal-icon:focus-visible {
+    transform: scale(1.12);
+    background: var(--lavender);
+  }
+
+  /* Journal open button inside month modal */
+  .journal-open-btn {
+    display: block;
+    margin: 0 auto 34px;
+    background: var(--lavender);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .journal-open-btn:hover, .journal-open-btn:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px var(--shadow);
+  }
+
+  /* Journal modal — distinct personal-note styling */
+  .journal-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2200;
+    background: rgba(92, 30, 60, 0.6);
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 16px;
+    overflow-y: auto;
+  }
+
+  .journal-modal.open { display: flex; }
+
+  .journal-modal-inner {
+    background: #fffaf3;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 34px,
+      rgba(201, 167, 240, 0.15) 35px
+    );
+    border-radius: 4px;
+    max-width: 640px;
+    width: 100%;
+    padding: 46px 40px 50px;
+    position: relative;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+    border-left: 5px solid var(--lavender);
+  }
+
+  .journal-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--ink-soft);
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 10px;
+  }
+
+  .journal-modal-close:hover, .journal-modal-close:focus-visible { color: var(--rose); }
+
+  .journal-eyebrow {
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--lavender);
+    margin: 0 0 6px;
+  }
+
+  .journal-title {
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    color: var(--ink);
+    margin: 0 0 26px;
+  }
+
+  .journal-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    line-height: 2.1;
+    color: var(--ink);
+  }
+
+  .journal-body p { margin: 0 0 18px; }
+
+  .journal-empty {
+    text-align: center;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
   .scrapbook {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -714,6 +843,9 @@
 <div class="month-modal" id="month-modal" role="dialog" aria-modal="true" aria-label="Month viewer">
   <div class="month-modal-inner" id="month-modal-inner"></div>
 </div>
+<div class="journal-modal" id="journal-modal" role="dialog" aria-modal="true" aria-label="Personal journal entry">
+  <div class="journal-modal-inner" id="journal-modal-inner"></div>
+</div>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
   <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
   <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo">&#8249;</button>
@@ -764,6 +896,7 @@ function renderChapters() {
     <p class="chapter-note">${m.subtitle || ''}</p>
     <div class="chapter-thumb">
       ${coverImg}
+      <button class="journal-icon" data-month="${id}" aria-label="Read journal entry" title="Journal entry">📔</button>
       <div class="chapter-thumb-overlay">
         <span class="chapter-thumb-open">open this month</span>
         ${countLabel ? `<span class="chapter-thumb-count">${countLabel}</span>` : ''}
@@ -784,6 +917,7 @@ function openMonthModal(id) {
     <p class="chapter-eyebrow">${m.eyebrow || ''}</p>
     <h2 class="chapter-title">${m.title || ''}</h2>
     <p class="chapter-note">${m.subtitle || ''}</p>
+    <button class="journal-open-btn" data-month="${id}">📔 Read this month's journal entry</button>
     <div class="scrapbook" id="grid-${id}" data-month="${id}"></div>
     <div class="letter">
       <h3>To Anika</h3>
@@ -794,6 +928,8 @@ function openMonthModal(id) {
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
   document.getElementById('month-modal-close').addEventListener('click', closeMonthModal);
+  const journalBtn = inner.querySelector('.journal-open-btn');
+  if (journalBtn) journalBtn.addEventListener('click', () => openJournal(id));
   renderScrapbooks();
 }
 
@@ -812,6 +948,13 @@ function setupChapterToggles() {
     });
   });
 
+  document.querySelectorAll('.journal-icon').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openJournal(btn.getAttribute('data-month'));
+    });
+  });
+
   document.getElementById('month-modal').addEventListener('click', (e) => {
     if (e.target.id === 'month-modal') closeMonthModal();
   });
@@ -819,7 +962,32 @@ function setupChapterToggles() {
     if (e.key === 'Escape' && document.getElementById('month-modal').classList.contains('open')) {
       closeMonthModal();
     }
+    if (e.key === 'Escape' && document.getElementById('journal-modal').classList.contains('open')) {
+      closeJournal();
+    }
   });
+}
+
+function openJournal(id) {
+  const m = monthsData[id];
+  if (!m) return;
+  const modal = document.getElementById('journal-modal');
+  const inner = document.getElementById('journal-modal-inner');
+  const entry = (m.journal || '').trim();
+  inner.innerHTML = `
+    <button class="journal-modal-close" id="journal-modal-close" aria-label="Close">&times;</button>
+    <p class="journal-eyebrow">Personal Journal</p>
+    <h2 class="journal-title">${m.title || ''}</h2>
+    <div class="journal-body">${entry ? entry : `<p class="journal-empty">No journal entry written for this month yet.</p>`}</div>
+  `;
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('journal-modal-close').addEventListener('click', closeJournal);
+}
+
+function closeJournal() {
+  document.getElementById('journal-modal').classList.remove('open');
+  document.body.style.overflow = document.getElementById('month-modal').classList.contains('open') ? 'hidden' : '';
 }
 
 function setupYearToggles() {

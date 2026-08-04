@@ -26,6 +26,11 @@ collections:
         name: "note"
         widget: "text"
         hint: "You can use <br><br> for paragraph breaks."
+      - label: "Personal Journal — your private reflections"
+        name: "journal"
+        widget: "text"
+        required: false
+        hint: "Your own thoughts about this time, separate from the note to Anika. You can use <br><br> or <p></p> for paragraph breaks."
       - label: "Photos"
         name: "photos"
         widget: "list"
