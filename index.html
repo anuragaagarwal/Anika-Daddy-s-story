@@ -832,6 +832,13 @@
   }
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="theme-color" content="#ff6b9d">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Anika & Daddy">
 </head>
 <body>
 
@@ -1219,6 +1226,12 @@ document.addEventListener('keydown', (e) => {
   setupChapterToggles();
   setupYearToggles();
 })();
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js').catch(() => {});
+  });
+}
 </script>
 
 </body>
