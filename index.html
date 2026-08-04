@@ -253,6 +253,114 @@
     font-style: italic;
   }
 
+  /* Collapsed chapter cover */
+  .chapter-cover {
+    cursor: pointer;
+    padding-bottom: 10px;
+  }
+
+  .chapter-cover .chapter-note { margin-bottom: 28px; }
+
+  .chapter-thumb {
+    position: relative;
+    max-width: 360px;
+    margin: 0 auto;
+    aspect-ratio: 4 / 5;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 26px var(--shadow);
+    transform: rotate(-1.5deg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #e0d4b8 0%, #cbb98f 100%);
+  }
+
+  .chapter-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .chapter-cover:hover .chapter-thumb,
+  .chapter-cover:focus-visible .chapter-thumb {
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 0 16px 36px var(--shadow);
+  }
+
+  .chapter-cover.open .chapter-thumb {
+    transform: rotate(0deg);
+  }
+
+  .chapter-thumb-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #8a7654;
+    font-style: italic;
+  }
+
+  .chapter-thumb-overlay {
+    position: absolute;
+    inset: auto 0 0 0;
+    background: linear-gradient(to top, rgba(30, 20, 12, 0.75), transparent);
+    padding: 30px 16px 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+  }
+
+  .chapter-thumb-open {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: #fff;
+  }
+
+  .chapter-thumb-count {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* Expandable chapter body */
+  .chapter-body {
+    display: none;
+    margin-top: 50px;
+  }
+
+  .chapter-body.open {
+    display: block;
+    animation: fadeIn 0.35s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .chapter-collapse {
+    display: block;
+    margin: 50px auto 0;
+    background: none;
+    border: 1px solid rgba(74, 55, 40, 0.3);
+    border-radius: 20px;
+    padding: 8px 22px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .chapter-collapse:hover, .chapter-collapse:focus-visible {
+    background: var(--ink);
+    color: #fff;
+  }
+
   .scrapbook {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -610,20 +718,71 @@ function renderChapters() {
   root.innerHTML = MONTH_IDS.map(id => {
     const m = monthsData[id];
     if (!m) return '';
+    const photos = m.photos || [];
+    const coverPhoto = photos.find(p => p.src);
+    const coverImg = coverPhoto
+      ? `<img src="${coverPhoto.src}" alt="${coverPhoto.caption || ''}">`
+      : `<span class="chapter-cover-placeholder">no photos yet</span>`;
+    const countLabel = photos.length
+      ? `${photos.length} photo${photos.length !== 1 ? 's' : ''}`
+      : '';
     return `
 <section class="chapter" id="${id}">
-  <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
-  <p class="chapter-eyebrow">${m.eyebrow || ''}</p>
-  <h2 class="chapter-title">${m.title || ''}</h2>
-  <p class="chapter-note">${m.subtitle || ''}</p>
-  <div class="scrapbook" id="grid-${id}" data-month="${id}"></div>
-  <div class="letter">
-    <h3>To Anika</h3>
-    <p contenteditable="true">${m.note || ''}</p>
-    <p class="letter-hint">click the note above to edit it directly</p>
+  <div class="chapter-cover" data-month="${id}" tabindex="0" role="button" aria-expanded="false">
+    <div class="chapter-divider"><span class="line"></span><span class="mark">✦</span><span class="line right"></span></div>
+    <p class="chapter-eyebrow">${m.eyebrow || ''}</p>
+    <h2 class="chapter-title">${m.title || ''}</h2>
+    <p class="chapter-note">${m.subtitle || ''}</p>
+    <div class="chapter-thumb">
+      ${coverImg}
+      <div class="chapter-thumb-overlay">
+        <span class="chapter-thumb-open">open this month</span>
+        ${countLabel ? `<span class="chapter-thumb-count">${countLabel}</span>` : ''}
+      </div>
+    </div>
+  </div>
+  <div class="chapter-body" id="body-${id}">
+    <div class="scrapbook" id="grid-${id}" data-month="${id}"></div>
+    <div class="letter">
+      <h3>To Anika</h3>
+      <p contenteditable="true">${m.note || ''}</p>
+      <p class="letter-hint">click the note above to edit it directly</p>
+    </div>
+    <button class="chapter-collapse" data-month="${id}">close this month</button>
   </div>
 </section>`;
   }).join('');
+}
+
+function setupChapterToggles() {
+  document.querySelectorAll('.chapter-cover').forEach(cover => {
+    const id = cover.getAttribute('data-month');
+    const body = document.getElementById(`body-${id}`);
+    const openChapter = () => {
+      const isOpen = body.classList.toggle('open');
+      cover.classList.toggle('open', isOpen);
+      cover.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (isOpen) {
+        setTimeout(() => cover.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+      }
+    };
+    cover.addEventListener('click', openChapter);
+    cover.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openChapter(); }
+    });
+  });
+
+  document.querySelectorAll('.chapter-collapse').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-month');
+      const body = document.getElementById(`body-${id}`);
+      const cover = document.querySelector(`.chapter-cover[data-month="${id}"]`);
+      body.classList.remove('open');
+      cover.classList.remove('open');
+      cover.setAttribute('aria-expanded', 'false');
+      cover.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
 }
 
 function setupYearToggles() {
@@ -717,6 +876,7 @@ document.addEventListener('keydown', (e) => {
 (async function init() {
   await loadMonths();
   renderChapters();
+  setupChapterToggles();
   setupYearToggles();
   renderScrapbooks();
 })();
