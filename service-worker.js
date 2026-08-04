@@ -1,10 +1,10 @@
-const CACHE_NAME = 'anika-daddy-story-v1';
+const CACHE_NAME = 'anika-daddy-story-v2';
 const CORE_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png'
+  '/icon-192-v2.png',
+  '/icon-512-v2.png'
 ];
 
 self.addEventListener('install', (event) => {
