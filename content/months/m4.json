@@ -2,17 +2,73 @@
   "id": "m4",
   "eyebrow": "3 months old",
   "title": "April 2023",
-  "subtitle": "Add this month's photos and captions here.",
+  "subtitle": "First flight, first time in New York",
   "note": "Placeholder note — write about what this month was like: the small things you noticed, what made you laugh, what worried you.",
   "journal": "",
   "photos": [
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/apr2023-01.jpeg",
+      "caption": "that smile in the crib"
     },
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/apr2023-02.jpeg",
+      "caption": "first time on a plane"
+    },
+    {
+      "src": "images/apr2023-03.jpeg",
+      "caption": "first time in New York"
+    },
+    {
+      "src": "images/apr2023-04.jpeg",
+      "caption": "meeting family in NYC"
+    },
+    {
+      "src": "images/apr2023-05.jpeg",
+      "caption": "landed and ready to explore"
+    },
+    {
+      "src": "images/apr2023-06.jpeg",
+      "caption": "story time"
+    },
+    {
+      "src": "images/apr2023-07.jpeg",
+      "caption": "getting to know new friends"
+    },
+    {
+      "src": "images/apr2023-08.jpeg",
+      "caption": "cozy afternoons with friends"
+    },
+    {
+      "src": "images/apr2023-09.jpeg",
+      "caption": "a walk in the city"
+    },
+    {
+      "src": "images/apr2023-10.jpeg",
+      "caption": "under the Brooklyn Bridge"
+    },
+    {
+      "src": "images/apr2023-11.jpeg",
+      "caption": "three months old"
+    },
+    {
+      "src": "images/apr2023-12.jpeg",
+      "caption": "curious about everything"
+    },
+    {
+      "src": "images/apr2023-13.jpeg",
+      "caption": "figuring out the bouncer"
+    },
+    {
+      "src": "images/apr2023-14.jpeg",
+      "caption": "wide awake and smiling"
+    },
+    {
+      "src": "images/apr2023-15.jpeg",
+      "caption": "getting comfortable"
+    },
+    {
+      "src": "images/apr2023-16.jpeg",
+      "caption": "another new friend in New York"
     }
   ]
 }
