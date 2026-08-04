@@ -2,17 +2,57 @@
   "id": "m3",
   "eyebrow": "2 months old",
   "title": "March 2023",
-  "subtitle": "Add this month's photos and captions here.",
+  "subtitle": "Two months in",
   "note": "Placeholder note — write about what this month was like: the small things you noticed, what made you laugh, what worried you.",
   "journal": "",
   "photos": [
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/mar2023-01.jpeg",
+      "caption": "resting my head next to yours"
     },
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/mar2023-02.jpeg",
+      "caption": "fresh out of the bath"
+    },
+    {
+      "src": "images/mar2023-03.jpeg",
+      "caption": "your first Holi"
+    },
+    {
+      "src": "images/mar2023-04.jpeg",
+      "caption": "sunset walks with Naani"
+    },
+    {
+      "src": "images/mar2023-05.jpeg",
+      "caption": "wide awake and taking it all in"
+    },
+    {
+      "src": "images/mar2023-06.jpeg",
+      "caption": "curled up for a nap"
+    },
+    {
+      "src": "images/mar2023-07.jpeg",
+      "caption": "shoulder naps with Daddy"
+    },
+    {
+      "src": "images/mar2023-08.jpeg",
+      "caption": "in Naani's arms"
+    },
+    {
+      "src": "images/mar2023-09.jpeg",
+      "caption": "meeting your cousins"
+    },
+    {
+      "src": "images/mar2023-10.jpeg",
+      "caption": "sunset by the water with Daddy"
+    },
+    {
+      "src": "images/mar2023-11.jpeg",
+      "caption": "family time, Holi colours still on"
+    },
+    {
+      "src": "images/mar2023-12.jpeg",
+      "caption": "another evening by the lake"
     }
   ]
 }
