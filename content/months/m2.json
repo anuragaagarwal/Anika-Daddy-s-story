@@ -2,16 +2,28 @@
   "id": "m2",
   "eyebrow": "1 month old",
   "title": "February 2023",
-  "subtitle": "Add this month's photos and captions here.",
+  "subtitle": "One month in the world",
   "note": "Placeholder note — write about what this month was like: the small things you noticed, what made you laugh, what worried you.",
   "photos": [
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/feb2023-01.jpeg",
+      "caption": "One month old. We loved celebrating you"
     },
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/feb2023-02.jpeg",
+      "caption": "You were named after Goddess Durga. This reminds me of that."
+    },
+    {
+      "src": "images/feb2023-03.jpeg",
+      "caption": "Reunited with my baby after a long trip to NY"
+    },
+    {
+      "src": "images/feb2023-04.jpeg",
+      "caption": "Always curious Always attentive xx"
+    },
+    {
+      "src": "images/feb2023-05.jpeg",
+      "caption": "Just 2 proud daddies with our daughters"
     }
   ]
 }
