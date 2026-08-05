@@ -2,17 +2,57 @@
   "id": "m6",
   "eyebrow": "5 months old",
   "title": "June 2023",
-  "subtitle": "Add this month's photos and captions here.",
+  "subtitle": "More of New York",
   "note": "Placeholder note — write about what this month was like: the small things you noticed, what made you laugh, what worried you.",
   "journal": "",
   "photos": [
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/jun2023-01.jpeg",
+      "caption": "watching the carousel go round at Jane's Carousel"
     },
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/jun2023-02.jpeg",
+      "caption": "first taste of solid food"
+    },
+    {
+      "src": "images/jun2023-03.jpeg",
+      "caption": "riding the subway like a true New Yorker"
+    },
+    {
+      "src": "images/jun2023-04.jpeg",
+      "caption": "riding the subway, taking it all in"
+    },
+    {
+      "src": "images/jun2023-05.jpeg",
+      "caption": "rooftop views of the Empire State Building"
+    },
+    {
+      "src": "images/jun2023-06.jpeg",
+      "caption": "DUMBO cobblestones with the Manhattan Bridge behind us"
+    },
+    {
+      "src": "images/jun2023-07.jpeg",
+      "caption": "meeting more family friends"
+    },
+    {
+      "src": "images/jun2023-08.jpeg",
+      "caption": "surrounded by friends"
+    },
+    {
+      "src": "images/jun2023-09.jpeg",
+      "caption": "a quiet moment, forehead to forehead"
+    },
+    {
+      "src": "images/jun2023-10.jpeg",
+      "caption": "on the carousel with Mommy and Daddy"
+    },
+    {
+      "src": "images/jun2023-11.jpeg",
+      "caption": "meeting even more friends"
+    },
+    {
+      "src": "images/jun2023-12.jpeg",
+      "caption": "with more of Daddy's friends"
     }
   ]
 }
