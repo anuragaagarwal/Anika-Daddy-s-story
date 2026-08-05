@@ -2,17 +2,57 @@
   "id": "m7",
   "eyebrow": "6 months old",
   "title": "July 2023",
-  "subtitle": "Add this month's photos and captions here.",
+  "subtitle": "Half a Year of You",
   "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/july2023-01.jpeg",
+      "caption": "Six months old today!"
     },
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/july2023-02.jpeg",
+      "caption": "Taking in the tall ships at South Street Seaport"
+    },
+    {
+      "src": "images/july2023-03.jpeg",
+      "caption": "Coffee shop hangs"
+    },
+    {
+      "src": "images/july2023-04.jpeg",
+      "caption": "Your very first boarding pass"
+    },
+    {
+      "src": "images/july2023-05.jpeg",
+      "caption": "Six months, and airborne"
+    },
+    {
+      "src": "images/july2023-06.jpeg",
+      "caption": "Dressed up and ready to twirl"
+    },
+    {
+      "src": "images/july2023-07.jpeg",
+      "caption": "Happy Diwali, from our whole family"
+    },
+    {
+      "src": "images/july2023-08.jpeg",
+      "caption": "An evening in the park, all dressed up"
+    },
+    {
+      "src": "images/july2023-09.jpeg",
+      "caption": "Wide-eyed under the trees"
+    },
+    {
+      "src": "images/july2023-10.jpeg",
+      "caption": "A walk in the park with Daddy"
+    },
+    {
+      "src": "images/july2023-11.jpeg",
+      "caption": "Another stroller, another adventure"
+    },
+    {
+      "src": "images/july2023-12.jpeg",
+      "caption": "Repping New York, with the Brooklyn Bridge behind us"
     }
   ]
 }
