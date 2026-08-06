@@ -34,9 +34,8 @@
     {
       "src": "images/muse-08.jpeg",
       "caption": "Deep in thought"
-    }
-  ]
-},    {
+    },
+    {
       "src": "images/muse-09.jpeg",
       "caption": "Curls flying"
     },
@@ -76,4 +75,5 @@
       "src": "images/muse-18.jpeg",
       "caption": "A few faces from the same afternoon"
     }
-
+  ]
+}
