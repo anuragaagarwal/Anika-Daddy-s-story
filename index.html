@@ -61,6 +61,45 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 
+  /* Scrolling photo strip */
+  .photo-strip-wrap {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 18px;
+    opacity: 0.92;
+  }
+
+  .photo-strip-row {
+    display: flex;
+    gap: 4px;
+  }
+
+  .photo-strip-track {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+    animation: photoStripScroll 60s linear infinite;
+  }
+
+  .photo-strip-tile {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(180, 60, 110, 0.15);
+  }
+
+  @keyframes photoStripScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @media (max-width: 600px) {
+    .photo-strip-tile { width: 70px; height: 70px; }
+  }
+
   .cover {
     min-height: auto;
     display: flex;
@@ -68,7 +107,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 60px 24px 20px;
+    padding: 40px 24px 20px;
     position: relative;
   }
 
@@ -349,9 +388,7 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.9);
-  }
-
-  /* Month viewer modal */
+  }/* Month viewer modal */
   .month-modal {
     display: none;
     position: fixed;
@@ -842,6 +879,8 @@
 </head>
 <body>
 
+<div class="photo-strip-wrap" id="photo-strip-wrap"></div>
+
 <section class="cover" id="cover">
   <div class="cover-heart">❤</div>
   <h1>Anika<span class="and">&amp;</span>Daddy's<br>Story</h1>
@@ -946,10 +985,7 @@
 </div>
 
 <a href="#cover" class="top-link">back to the top</a>
-<footer>Anika &amp; Daddy's Story</footer>
-
-
-<script>
+<footer>Anika &amp; Daddy's Story</footer><script>
 const MONTH_IDS = Array.from({length: 44}, (_, i) => `m${i+1}`);
 let monthsData = {};
 let lettersData = [];
@@ -973,6 +1009,53 @@ async function loadLetters() {
       lettersData = data.letters || [];
     }
   } catch (e) { lettersData = []; }
+}
+
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function renderPhotoStrip() {
+  const wrap = document.getElementById('photo-strip-wrap');
+  if (!wrap) return;
+
+  // Collect every photo src across every populated month, de-duplicated.
+  const seen = new Set();
+  const allSrcs = [];
+  MONTH_IDS.forEach(id => {
+    const photos = (monthsData[id] && monthsData[id].photos) || [];
+    photos.forEach(p => {
+      if (p.src && !seen.has(p.src)) {
+        seen.add(p.src);
+        allSrcs.push(p.src);
+      }
+    });
+  });
+
+  if (!allSrcs.length) { wrap.innerHTML = ''; return; }
+
+  // Shuffle so the strip isn't always in the same chronological order,
+  // and cap how many tiles we render for performance on very large libraries.
+  const MAX_TILES = 40;
+  const chosen = shuffleArray(allSrcs).slice(0, MAX_TILES);
+
+  // Duplicate the sequence back-to-back so the CSS animation (translateX -50%) loops seamlessly.
+  const seq = [...chosen, ...chosen];
+  const tiles = seq.map(src => `<div class="photo-strip-tile" style="background-image:url('${src}')"></div>`).join('');
+
+  // Scale animation duration roughly to content length so speed feels consistent as photo count grows.
+  const duration = Math.max(30, chosen.length * 3);
+
+  wrap.innerHTML = `
+    <div class="photo-strip-row">
+      <div class="photo-strip-track" style="animation-duration:${duration}s;">${tiles}</div>
+    </div>
+  `;
 }
 
 function openLetters() {
@@ -1223,6 +1306,7 @@ document.addEventListener('keydown', (e) => {
 (async function init() {
   await Promise.all([loadMonths(), loadLetters()]);
   renderChapters();
+  renderPhotoStrip();
   setupChapterToggles();
   setupYearToggles();
 })();
