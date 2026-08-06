@@ -1,1 +1,39 @@
-
+{
+  "id": "muse",
+  "title": "Daddy's Muse",
+  "subtitle": "special photos of you, just because",
+  "photos": [
+    {
+      "src": "images/muse-01.jpeg",
+      "caption": "Sunshine on the couch"
+    },
+    {
+      "src": "images/muse-02.jpeg",
+      "caption": "Little gentleman"
+    },
+    {
+      "src": "images/muse-03.jpeg",
+      "caption": "City views, tiny explorer"
+    },
+    {
+      "src": "images/muse-04.jpeg",
+      "caption": "Caught mid-giggle"
+    },
+    {
+      "src": "images/muse-05.jpeg",
+      "caption": "Winnie the Pooh and curls for days"
+    },
+    {
+      "src": "images/muse-06.jpeg",
+      "caption": "Peeking out from behind the curtain"
+    },
+    {
+      "src": "images/muse-07.jpeg",
+      "caption": "That grin"
+    },
+    {
+      "src": "images/muse-08.jpeg",
+      "caption": "Deep in thought"
+    }
+  ]
+}
