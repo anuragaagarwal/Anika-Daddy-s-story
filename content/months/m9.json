@@ -7,12 +7,48 @@
   "journal": "",
   "photos": [
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/september2023-01.jpeg",
+      "caption": "Your name in the sand, on a beach in New Zealand"
     },
     {
-      "src": "",
-      "caption": "caption goes here"
+      "src": "images/september2023-02.jpeg",
+      "caption": "Stretching out on the bed"
+    },
+    {
+      "src": "images/september2023-03.jpeg",
+      "caption": "Sitting pretty"
+    },
+    {
+      "src": "images/september2023-04.jpeg",
+      "caption": "Giggling in the bouncer"
+    },
+    {
+      "src": "images/september2023-05.jpeg",
+      "caption": "TV time with Grandpa"
+    },
+    {
+      "src": "images/september2023-06.jpeg",
+      "caption": "First steps in the walker"
+    },
+    {
+      "src": "images/september2023-07.jpeg",
+      "caption": "Piano lessons with Mommy"
+    },
+    {
+      "src": "images/september2023-08.jpeg",
+      "caption": "Snack time in the high chair"
+    },
+    {
+      "src": "images/september2023-09.jpeg",
+      "caption": "Making friends with a new koala plush"
+    },
+    {
+      "src": "images/september2023-10.jpeg",
+      "caption": "Not sure about this monkey"
+    },
+    {
+      "src": "images/september2023-11.gif",
+      "caption": "A little animation of you being you"
     }
   ]
 }
