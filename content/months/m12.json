@@ -6,13 +6,25 @@
   "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/december2023-01.jpeg", "caption": "My very first Christmas, all bundled up." },
+    { "src": "images/december2023-02.jpeg", "caption": "Selfie time with Daddy." },
+    { "src": "images/december2023-03.jpeg", "caption": "Making a mess at snack time." },
+    { "src": "images/december2023-04.jpeg", "caption": "Bundled up in yellow for a night out." },
+    { "src": "images/december2023-05.jpeg", "caption": "Wide-eyed in her cozy yellow puffer." },
+    { "src": "images/december2023-06.jpeg", "caption": "Getting comfy in the car seat." },
+    { "src": "images/december2023-07.jpeg", "caption": "All settled in." },
+    { "src": "images/december2023-08.jpeg", "caption": "Holding Daddy's hand." },
+    { "src": "images/december2023-09.jpeg", "caption": "Meeting Santa for the first time — not so sure about him." },
+    { "src": "images/december2023-10.jpeg", "caption": "A family photo with Santa." },
+    { "src": "images/december2023-11.jpeg", "caption": "A festive family portrait." },
+    { "src": "images/december2023-12.jpeg", "caption": "All ready for Christmas in her santa hat." },
+    { "src": "images/december2023-13.jpeg", "caption": "Family sleigh ride with the Brooklyn Bridge behind us." },
+    { "src": "images/december2023-14.jpeg", "caption": "All smiles for a family selfie by the bridge." },
+    { "src": "images/december2023-15.jpeg", "caption": "A quiet moment with Daddy by the water." },
+    { "src": "images/december2023-16.jpeg", "caption": "Under the Christmas tree with Daddy." },
+    { "src": "images/december2023-17.jpeg", "caption": "Cozy in matching Christmas pajamas." },
+    { "src": "images/december2023-18.jpeg", "caption": "A visit to see Santa at Rockefeller Center." },
+    { "src": "images/december2023-19.jpeg", "caption": "A ride on the carousel." },
+    { "src": "images/december2023-20.jpeg", "caption": "Out and about on a walk." }
   ]
 }
