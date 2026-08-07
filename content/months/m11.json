@@ -6,13 +6,29 @@
   "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/november2023-01.jpeg", "caption": "All dressed up in her festive blue and yellow lehenga." },
+    { "src": "images/november2023-02.jpeg", "caption": "Morning snuggles with Daddy in the playpen." },
+    { "src": "images/november2023-03.jpeg", "caption": "Bundled up in pink for a stroller ride." },
+    { "src": "images/november2023-04.jpeg", "caption": "Out and about in her horse pajamas, teether in hand." },
+    { "src": "images/november2023-05.jpeg", "caption": "Watching Mommy take a call from the playpen." },
+    { "src": "images/november2023-06.jpeg", "caption": "Standing tall in the crib, all smiles." },
+    { "src": "images/november2023-07.jpeg", "caption": "Peeking over the crib rail." },
+    { "src": "images/november2023-08.jpeg", "caption": "Getting the hang of the push walker." },
+    { "src": "images/november2023-09.jpeg", "caption": "Out shopping in her pink bear-eared hood." },
+    { "src": "images/november2023-10.jpeg", "caption": "A quiet moment in the stroller." },
+    { "src": "images/november2023-11.jpeg", "caption": "Exploring in her red sweater and rainbow crocs." },
+    { "src": "images/november2023-12.jpeg", "caption": "A family visit to the temple." },
+    { "src": "images/november2023-13.jpeg", "caption": "Cozied up in her cardigan and bunny slippers." },
+    { "src": "images/november2023-14.jpeg", "caption": "Another cozy evening in her cardigan and bunny slippers." },
+    { "src": "images/november2023-15.jpeg", "caption": "A festive family photo, all dressed up together." },
+    { "src": "images/november2023-16.jpeg", "caption": "The Diwali table, all set up and glowing with diyas." },
+    { "src": "images/november2023-17.jpeg", "caption": "Celebrating Diwali together as a family." },
+    { "src": "images/november2023-18.jpeg", "caption": "Standing tall at her activity table." },
+    { "src": "images/november2023-19.jpeg", "caption": "An evening stroll past the twinkling lights of Empire Stores." },
+    { "src": "images/november2023-20.jpeg", "caption": "Getting sleepy by the carousel." },
+    { "src": "images/november2023-21.jpeg", "caption": "Taking in the DUMBO lights on an evening walk." },
+    { "src": "images/november2023-22.jpeg", "caption": "A stroll with Daddy." },
+    { "src": "images/november2023-23.jpeg", "caption": "Wide-eyed under the wreaths at Grand Central." },
+    { "src": "images/november2023-24.jpeg", "caption": "Having a curious look in the mirror." }
   ]
 }
