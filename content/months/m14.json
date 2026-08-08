@@ -1,18 +1,25 @@
 {
   "id": "m14",
-  "eyebrow": "1y 1m old",
+  "eyebrow": "13 months old",
   "title": "February 2024",
   "subtitle": "Add this month's photos and captions here.",
-  "note": "Placeholder note — the toddler years. What new word, step, or habit stood out this month?",
+  "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/february2024-01.jpeg", "caption": "A morning selfie with Daddy." },
+    { "src": "images/february2024-02.jpeg", "caption": "Curious in her yellow striped pajamas." },
+    { "src": "images/february2024-03.jpeg", "caption": "Wide-eyed and wondering what's next." },
+    { "src": "images/february2024-04.jpeg", "caption": "Still investigating the coffee table." },
+    { "src": "images/february2024-05.jpeg", "caption": "A Valentine's Day family dinner out." },
+    { "src": "images/february2024-06.jpeg", "caption": "Flipping through a book by her toy piano." },
+    { "src": "images/february2024-07.jpeg", "caption": "Another Daddy selfie, floral pajamas and all." },
+    { "src": "images/february2024-08.jpeg", "caption": "Making an arch under Mommy on the lawn." },
+    { "src": "images/february2024-09.jpeg", "caption": "A little smile out in the garden." },
+    { "src": "images/february2024-10.jpeg", "caption": "Giggling and running across the grass." },
+    { "src": "images/february2024-11.jpeg", "caption": "A selfie with Daddy at home." },
+    { "src": "images/february2024-12.jpeg", "caption": "A serious look, kneeling in the grass." },
+    { "src": "images/february2024-13.jpeg", "caption": "Holding the flag on the putting green." },
+    { "src": "images/february2024-14.jpeg", "caption": "Playing with a block in her narwhal pajamas." },
+    { "src": "images/february2024-15.jpeg", "caption": "Investigating something she found on the bed." }
   ]
 }
