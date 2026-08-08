@@ -1,18 +1,46 @@
 {
   "id": "m13",
-  "eyebrow": "1 year old",
+  "eyebrow": "12 months old",
   "title": "January 2024",
   "subtitle": "Add this month's photos and captions here.",
-  "note": "Placeholder note — the toddler years. What new word, step, or habit stood out this month?",
+  "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/january2024-01.jpeg", "caption": "Turning ONE! Standing proudly next to her \"1\" balloon and crown." },
+    { "src": "images/january2024-02.jpeg", "caption": "Ringing in New Year's Eve with Mommy." },
+    { "src": "images/january2024-03.jpeg", "caption": "Her first morning of 2024, still in her holiday pajamas." },
+    { "src": "images/january2024-04.jpeg", "caption": "Snack time at the counter with Mommy." },
+    { "src": "images/january2024-05.jpeg", "caption": "Getting into her snack with both hands." },
+    { "src": "images/january2024-06.jpeg", "caption": "A snowy family walk under the Manhattan Bridge in DUMBO." },
+    { "src": "images/january2024-07.jpeg", "caption": "Playing with tissue paper on a shopping trip." },
+    { "src": "images/january2024-08.jpeg", "caption": "Welcome to Mexico! Landing for the family trip." },
+    { "src": "images/january2024-09.jpeg", "caption": "Sunrise over the ocean from the hotel balcony, sun hat and all." },
+    { "src": "images/january2024-10.jpeg", "caption": "Taking in the view from her travel crib." },
+    { "src": "images/january2024-11.jpeg", "caption": "All smiles on the balcony overlooking the beach." },
+    { "src": "images/january2024-12.jpeg", "caption": "Lounging poolside in her stroller." },
+    { "src": "images/january2024-13.jpeg", "caption": "Bouncing on the bed under her \"Happy 1th Birthday\" sign." },
+    { "src": "images/january2024-14.jpeg", "caption": "Giggling on birthday morning." },
+    { "src": "images/january2024-15.jpeg", "caption": "Playing with a \"Te Amo Mama\" balloon." },
+    { "src": "images/january2024-16.jpeg", "caption": "Clapping away in her teddy bear pajamas." },
+    { "src": "images/january2024-17.jpeg", "caption": "Wading into the pool in her pink swimsuit." },
+    { "src": "images/january2024-18.jpeg", "caption": "A family selfie by the infinity pool." },
+    { "src": "images/january2024-19.jpeg", "caption": "Standing tall next to her ONE blocks on her big day." },
+    { "src": "images/january2024-20.jpeg", "caption": "Family portrait with Mommy and Daddy, ONE blocks and the \"1\" balloon." },
+    { "src": "images/january2024-21.jpeg", "caption": "A kiss from Mommy and Daddy on the beach." },
+    { "src": "images/january2024-22.jpeg", "caption": "A beach walk holding Mommy's hand." },
+    { "src": "images/january2024-23.jpeg", "caption": "Reaching up for Mommy's hand by the waves." },
+    { "src": "images/january2024-24.jpeg", "caption": "Pool time with Daddy." },
+    { "src": "images/january2024-25.jpeg", "caption": "More splashing around with Daddy." },
+    { "src": "images/january2024-26.jpeg", "caption": "A group photo with friends back home." },
+    { "src": "images/january2024-27.jpeg", "caption": "Making friends (and funny faces) at the office." },
+    { "src": "images/january2024-28.jpeg", "caption": "Sitting in an open suitcase, ready (or not) to pack." },
+    { "src": "images/january2024-29.jpeg", "caption": "Bath time, rubber ducky included." },
+    { "src": "images/january2024-30.jpeg", "caption": "At JFK with Mommy, ready to fly Emirates." },
+    { "src": "images/january2024-31.jpeg", "caption": "Fast asleep on Mommy during the flight." },
+    { "src": "images/january2024-32.jpeg", "caption": "Watching the world go by from the plane window." },
+    { "src": "images/january2024-33.jpeg", "caption": "Big sun hat, wide eyes, ready for takeoff." },
+    { "src": "images/january2024-34.jpeg", "caption": "All buckled into the stroller for a walk down the aisle." },
+    { "src": "images/january2024-35.jpeg", "caption": "A quiet moment at home." },
+    { "src": "images/january2024-36.jpeg", "caption": "A FaceTime call with Daddy." }
   ]
 }
