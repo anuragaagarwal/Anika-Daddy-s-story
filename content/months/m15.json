@@ -1,18 +1,24 @@
 {
   "id": "m15",
-  "eyebrow": "1y 2m old",
+  "eyebrow": "14 months old",
   "title": "March 2024",
   "subtitle": "Add this month's photos and captions here.",
-  "note": "Placeholder note — the toddler years. What new word, step, or habit stood out this month?",
+  "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/march2024-01.jpeg", "caption": "All smiles, covered in Holi colors." },
+    { "src": "images/march2024-02.jpeg", "caption": "Exploring her toy chest in Christmas pajamas." },
+    { "src": "images/march2024-03.jpeg", "caption": "A morning selfie with Daddy." },
+    { "src": "images/march2024-04.jpeg", "caption": "Sorting through toy animals on the bed." },
+    { "src": "images/march2024-05.jpeg", "caption": "A big smile, pink toy in hand." },
+    { "src": "images/march2024-06.jpeg", "caption": "Tucking her dolls in for a nap." },
+    { "src": "images/march2024-07.jpeg", "caption": "Another selfie with Daddy, sunglasses on." },
+    { "src": "images/march2024-08.jpeg", "caption": "Getting the colors ready for Holi with Mommy and Daddy." },
+    { "src": "images/march2024-09.jpeg", "caption": "A colorful family selfie celebrating Holi." },
+    { "src": "images/march2024-10.jpeg", "caption": "Laughing it up, Holi colors and all." },
+    { "src": "images/march2024-11.jpeg", "caption": "A gentler smile after all the Holi fun." },
+    { "src": "images/march2024-12.jpeg", "caption": "Twirling in her pink dress at home." },
+    { "src": "images/march2024-13.jpeg", "caption": "Reaching for a fresh orange juice at brunch." },
+    { "src": "images/march2024-14.jpeg", "caption": "Happy Easter! Macarons and cookies to celebrate." }
   ]
 }
