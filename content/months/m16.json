@@ -1,18 +1,23 @@
 {
   "id": "m16",
-  "eyebrow": "1y 3m old",
+  "eyebrow": "15 months old",
   "title": "April 2024",
   "subtitle": "Add this month's photos and captions here.",
-  "note": "Placeholder note — the toddler years. What new word, step, or habit stood out this month?",
+  "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/april2024-01.jpeg", "caption": "A little photo shoot with her favorite blue ball." },
+    { "src": "images/april2024-02.jpeg", "caption": "Taking a break at the golf club lounge." },
+    { "src": "images/april2024-03.jpeg", "caption": "A sneaky little snack." },
+    { "src": "images/april2024-04.jpeg", "caption": "A sunny family selfie on the golf course." },
+    { "src": "images/april2024-05.jpeg", "caption": "One more with Mommy and Daddy before the golf cart rolls by." },
+    { "src": "images/april2024-06.jpeg", "caption": "Perched on the window ledge, feet dangling." },
+    { "src": "images/april2024-07.jpeg", "caption": "Practicing her moves at gym class." },
+    { "src": "images/april2024-08.jpeg", "caption": "An evening stroll by the lake." },
+    { "src": "images/april2024-09.jpeg", "caption": "A happy twirl out on the patio." },
+    { "src": "images/april2024-10.jpeg", "caption": "Getting the hang of her fork at dinner." },
+    { "src": "images/april2024-11.jpeg", "caption": "Focused on finishing every last bite." },
+    { "src": "images/april2024-12.jpeg", "caption": "A silly overhead shot with Mommy." },
+    { "src": "images/april2024-13.jpeg", "caption": "Off on her own adventure, straight out the door." }
   ]
 }
