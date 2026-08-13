@@ -1,18 +1,45 @@
 {
   "id": "m17",
-  "eyebrow": "1y 4m old",
+  "eyebrow": "16 months old",
   "title": "May 2024",
   "subtitle": "Add this month's photos and captions here.",
-  "note": "Placeholder note — the toddler years. What new word, step, or habit stood out this month?",
+  "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/may2024-01.jpeg", "caption": "Anika and Daddy, with the bridge behind us" },
+    { "src": "images/may2024-02.jpeg", "caption": "All smiles in her car seat" },
+    { "src": "images/may2024-03.jpeg", "caption": "Mama and Anika, all smiles in the car" },
+    { "src": "images/may2024-04.jpeg", "caption": "Taking it all in from the living room floor" },
+    { "src": "images/may2024-05.jpeg", "caption": "Pointing something out to Mama at an outdoor cafe" },
+    { "src": "images/may2024-06.jpeg", "caption": "Wide-eyed in the stroller" },
+    { "src": "images/may2024-07.jpeg", "caption": "Milk mustache in the kitchen" },
+    { "src": "images/may2024-08.jpeg", "caption": "Exploring everything, one taste at a time" },
+    { "src": "images/may2024-09.jpeg", "caption": "Mid-slide surprise" },
+    { "src": "images/may2024-10.jpeg", "caption": "Perched on the ledge" },
+    { "src": "images/may2024-11.jpeg", "caption": "Cracking up at the playground" },
+    { "src": "images/may2024-12.jpeg", "caption": "Sliding down with Daddy" },
+    { "src": "images/may2024-13.jpeg", "caption": "Another trip down the slide, hand in hand" },
+    { "src": "images/may2024-14.jpeg", "caption": "Laughing all the way down" },
+    { "src": "images/may2024-15.jpeg", "caption": "Out for a stroll in the city with Daddy" },
+    { "src": "images/may2024-16.jpeg", "caption": "Cozy ride in her Keith Haring hoodie" },
+    { "src": "images/may2024-17.jpeg", "caption": "Waving hello from the booth" },
+    { "src": "images/may2024-18.jpeg", "caption": "A family moment in DUMBO" },
+    { "src": "images/may2024-19.jpeg", "caption": "Another surprised face on the slide" },
+    { "src": "images/may2024-20.jpeg", "caption": "Ball time in her Pooh onesie" },
+    { "src": "images/may2024-21.jpeg", "caption": "A quiet moment at the temple" },
+    { "src": "images/may2024-22.jpeg", "caption": "Snack time" },
+    { "src": "images/may2024-23.jpeg", "caption": "When we packed up our NY life and moved to Dubai..." },
+    { "src": "images/may2024-24.jpeg", "caption": "A big family gathering" },
+    { "src": "images/may2024-25.jpeg", "caption": "Central Park with Daddy" },
+    { "src": "images/may2024-26.jpeg", "caption": "Family day in Central Park, skyline behind us" },
+    { "src": "images/may2024-27.jpeg", "caption": "A walk through the park" },
+    { "src": "images/may2024-28.jpeg", "caption": "Meeting a new friend at the Cat Cafe" },
+    { "src": "images/may2024-29.jpeg", "caption": "Making friends with a cat at the Cat Cafe" },
+    { "src": "images/may2024-30.jpeg", "caption": "Striking a pose in her Jungle Book sweatshirt" },
+    { "src": "images/may2024-31.jpeg", "caption": "Squatting down in her 'Mama' tee" },
+    { "src": "images/may2024-32.jpeg", "caption": "Wide-eyed in the park" },
+    { "src": "images/may2024-33.jpeg", "caption": "Lounging in her safari pajamas" },
+    { "src": "images/may2024-34.jpeg", "caption": "Browsing DUMBO Market with Mama" },
+    { "src": "images/may2024-35.jpeg", "caption": "A close-up with Daddy" }
   ]
 }
