@@ -1,18 +1,30 @@
 {
   "id": "m20",
-  "eyebrow": "1y 7m old",
+  "eyebrow": "19 months old",
   "title": "August 2024",
   "subtitle": "Add this month's photos and captions here.",
-  "note": "Placeholder note — the toddler years. What new word, step, or habit stood out this month?",
+  "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/august2024-01.jpeg", "caption": "In loving memory of Dadaji, Shri Ashok ji Agarwal" },
+    { "src": "images/august2024-02.jpeg", "caption": "Exploring on her tiptoes" },
+    { "src": "images/august2024-03.jpeg", "caption": "Catching up with family in Nepal" },
+    { "src": "images/august2024-04.jpeg", "caption": "Cutting cake with the family" },
+    { "src": "images/august2024-05.jpeg", "caption": "A quiet conversation on the balcony" },
+    { "src": "images/august2024-06.jpeg", "caption": "Cozy on the couch in her 'Future Has No Fame' tee" },
+    { "src": "images/august2024-07.jpeg", "caption": "Another moment on the couch" },
+    { "src": "images/august2024-08.jpeg", "caption": "Curling up for a close-up" },
+    { "src": "images/august2024-09.jpeg", "caption": "All eyes up" },
+    { "src": "images/august2024-10.jpeg", "caption": "A selfie with Daddy" },
+    { "src": "images/august2024-11.jpeg", "caption": "Building with blocks on the alphabet mat" },
+    { "src": "images/august2024-12.jpeg", "caption": "Winding down with Daddy" },
+    { "src": "images/august2024-13.jpeg", "caption": "Drawing along with a song on TV" },
+    { "src": "images/august2024-14.jpeg", "caption": "A visit to Playville" },
+    { "src": "images/august2024-15.gif", "caption": "Bouncing away on the trampoline" },
+    { "src": "images/august2024-16.jpeg", "caption": "Fresh out of the bath, on the move" },
+    { "src": "images/august2024-17.jpeg", "caption": "Weighing in during a family video call" },
+    { "src": "images/august2024-18.jpeg", "caption": "Reaching for the camera on the alphabet mat" },
+    { "src": "images/august2024-19.jpeg", "caption": "Upside down in the play tunnel" },
+    { "src": "images/august2024-20.jpeg", "caption": "A selfie with Daddy in his Khalsa cap" }
   ]
 }
