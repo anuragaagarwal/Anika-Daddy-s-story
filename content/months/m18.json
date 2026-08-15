@@ -1,18 +1,22 @@
 {
   "id": "m18",
-  "eyebrow": "1y 5m old",
+  "eyebrow": "17 months old",
   "title": "June 2024",
   "subtitle": "Add this month's photos and captions here.",
-  "note": "Placeholder note — the toddler years. What new word, step, or habit stood out this month?",
+  "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/june2024-01.jpeg", "caption": "Saying goodbye to our NY home" },
+    { "src": "images/june2024-02.jpeg", "caption": "One more selfie with Daddy" },
+    { "src": "images/june2024-03.jpeg", "caption": "All smiles with her toys" },
+    { "src": "images/june2024-04.jpeg", "caption": "Exploring the play tunnel" },
+    { "src": "images/june2024-05.jpeg", "caption": "A curious peek around the door" },
+    { "src": "images/june2024-06.jpeg", "caption": "Stretching up for a look" },
+    { "src": "images/june2024-07.jpeg", "caption": "In her comfy pink pajamas" },
+    { "src": "images/june2024-08.jpeg", "caption": "A quiet selfie moment" },
+    { "src": "images/june2024-09.jpeg", "caption": "On the move in her sunflower pajamas" },
+    { "src": "images/june2024-10.jpeg", "caption": "A close-up glance" },
+    { "src": "images/june2024-11.jpeg", "caption": "Peeking out from her little basket" },
+    { "src": "images/june2024-12.jpeg", "caption": "Goodbye Dumbo & NY" }
   ]
 }
