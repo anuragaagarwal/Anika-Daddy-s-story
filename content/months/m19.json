@@ -1,18 +1,33 @@
 {
   "id": "m19",
-  "eyebrow": "1y 6m old",
+  "eyebrow": "18 months old",
   "title": "July 2024",
   "subtitle": "Add this month's photos and captions here.",
-  "note": "Placeholder note — the toddler years. What new word, step, or habit stood out this month?",
+  "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/july2024-01.jpeg", "caption": "Anika and me, US Open cap and all" },
+    { "src": "images/july2024-02.jpeg", "caption": "Playing with her ball at the hotel" },
+    { "src": "images/july2024-03.jpeg", "caption": "On the move, mid-wiggle" },
+    { "src": "images/july2024-04.jpeg", "caption": "A quiet selfie with Daddy" },
+    { "src": "images/july2024-05.jpeg", "caption": "Another US Open cap selfie" },
+    { "src": "images/july2024-06.jpeg", "caption": "Sorting through hair ties by the window" },
+    { "src": "images/july2024-07.jpeg", "caption": "Cracking up by the window, Dubai skyline behind her" },
+    { "src": "images/july2024-08.jpeg", "caption": "All smiles by the curtain" },
+    { "src": "images/july2024-09.jpeg", "caption": "Lounging on the windowsill" },
+    { "src": "images/july2024-10.jpeg", "caption": "Toothbrushing time" },
+    { "src": "images/july2024-11.jpeg", "caption": "Minty grin after brushing" },
+    { "src": "images/july2024-12.jpeg", "caption": "Funny faces with Daddy" },
+    { "src": "images/july2024-13.jpeg", "caption": "Exploring the windowsill in her Pooh pajamas" },
+    { "src": "images/july2024-14.jpeg", "caption": "A cozy selfie with Daddy" },
+    { "src": "images/july2024-15.jpeg", "caption": "Perched on the windowsill in her unicorn shirt" },
+    { "src": "images/july2024-16.jpeg", "caption": "Another windowsill moment" },
+    { "src": "images/july2024-17.jpeg", "caption": "Up in Daddy's hands" },
+    { "src": "images/july2024-18.jpeg", "caption": "Flying high with Daddy" },
+    { "src": "images/july2024-19.jpeg", "caption": "Peeking through the sheer curtain" },
+    { "src": "images/july2024-20.jpeg", "caption": "Snuggled under the blanket" },
+    { "src": "images/july2024-21.jpeg", "caption": "A big gulp of water" },
+    { "src": "images/july2024-22.jpeg", "caption": "Curled up and content" },
+    { "src": "images/july2024-23.jpeg", "caption": "Anika and me, matching ponytails" }
   ]
 }
