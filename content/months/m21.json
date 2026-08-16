@@ -1,18 +1,27 @@
 {
   "id": "m21",
-  "eyebrow": "1y 8m old",
+  "eyebrow": "20 months old",
   "title": "September 2024",
   "subtitle": "Add this month's photos and captions here.",
-  "note": "Placeholder note — the toddler years. What new word, step, or habit stood out this month?",
+  "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/september2024-01.jpeg", "caption": "Hello Kitty and gold boots" },
+    { "src": "images/september2024-02.jpeg", "caption": "Exploring the new teepee" },
+    { "src": "images/september2024-03.jpeg", "caption": "That's a big slide!" },
+    { "src": "images/september2024-04.jpeg", "caption": "Ready to go down" },
+    { "src": "images/september2024-05.jpeg", "caption": "Watching the city go by" },
+    { "src": "images/september2024-06.jpeg", "caption": "A selfie with Daddy, city views" },
+    { "src": "images/september2024-07.jpeg", "caption": "Learning to ride" },
+    { "src": "images/september2024-08.gif", "caption": "Deep into a show" },
+    { "src": "images/september2024-09.jpeg", "caption": "Lazy afternoon with Daddy" },
+    { "src": "images/september2024-10.jpeg", "caption": "Just thinking" },
+    { "src": "images/september2024-11.jpeg", "caption": "Curious look" },
+    { "src": "images/september2024-12.jpeg", "caption": "Mid-thought" },
+    { "src": "images/september2024-13.jpeg", "caption": "A finger to chew on" },
+    { "src": "images/september2024-14.jpeg", "caption": "Chin in hand" },
+    { "src": "images/september2024-15.jpeg", "caption": "Lost in a daydream" },
+    { "src": "images/september2024-16.jpeg", "caption": "A few expressions from the same afternoon" },
+    { "src": "images/september2024-17.jpeg", "caption": "Waving hello to Daddy on FaceTime" }
   ]
 }
