@@ -1,18 +1,26 @@
 {
   "id": "m22",
-  "eyebrow": "1y 9m old",
+  "eyebrow": "21 months old",
   "title": "October 2024",
   "subtitle": "Add this month's photos and captions here.",
-  "note": "Placeholder note — the toddler years. What new word, step, or habit stood out this month?",
+  "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/october2024-01.jpeg", "caption": "Peeking out through the play tent doorway, lantern in hand" },
+    { "src": "images/october2024-02.jpeg", "caption": "Another peek from the tent, big curious eyes" },
+    { "src": "images/october2024-03.jpeg", "caption": "One more look out from her tent hideout" },
+    { "src": "images/october2024-04.jpeg", "caption": "Sitting on the bed in her New Zealand tee, lost in thought" },
+    { "src": "images/october2024-05.jpeg", "caption": "Same spot on the bed, still thinking hard about something" },
+    { "src": "images/october2024-06.jpeg", "caption": "One more from that quiet moment on the bed" },
+    { "src": "images/october2024-07.jpeg", "caption": "Cuddled up with Daddy for a selfie in bed" },
+    { "src": "images/october2024-08.jpeg", "caption": "Half into her giraffe pajamas, holding tight to a lotion bottle" },
+    { "src": "images/october2024-09.jpeg", "caption": "Getting dressed for bed, Daddy's legs for scale" },
+    { "src": "images/october2024-10.jpeg", "caption": "Giving the camera a very serious look over a big shaker bottle" },
+    { "src": "images/october2024-11.jpeg", "caption": "\"Painting\" Daddy's toenails with total concentration" },
+    { "src": "images/october2024-12.jpeg", "caption": "Meeting a cat at the cat café" },
+    { "src": "images/october2024-13.jpeg", "caption": "Twirling off in her ruffled pink dress" },
+    { "src": "images/october2024-14.jpeg", "caption": "Arms crossed, striking her most serious pose in the pink dress" },
+    { "src": "images/october2024-15.jpeg", "caption": "Trying out Daddy's giant sneakers over her pajamas" },
+    { "src": "images/october2024-16.jpeg", "caption": "Tongue out, still stomping around in Daddy's shoes" }
   ]
 }
