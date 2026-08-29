@@ -1,18 +1,28 @@
 {
   "id": "m23",
-  "eyebrow": "1y 10m old",
+  "eyebrow": "22 months old",
   "title": "November 2024",
   "subtitle": "Add this month's photos and captions here.",
-  "note": "Placeholder note — the toddler years. What new word, step, or habit stood out this month?",
+  "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/november2024-01.jpeg", "caption": "A kiss on the head from Daddy" },
+    { "src": "images/november2024-02.jpeg", "caption": "Making music with Nani on the alphabet mat" },
+    { "src": "images/november2024-03.jpeg", "caption": "Coloring time with Nani" },
+    { "src": "images/november2024-04.jpeg", "caption": "Giggling in her favorite hideout" },
+    { "src": "images/november2024-05.jpeg", "caption": "Reaching for the artwork" },
+    { "src": "images/november2024-06.jpeg", "caption": "Peeking out of the teepee" },
+    { "src": "images/november2024-07.jpeg", "caption": "A close selfie with Daddy" },
+    { "src": "images/november2024-08.jpeg", "caption": "Another selfie with Daddy" },
+    { "src": "images/november2024-09.jpeg", "caption": "Snuggled up with Daddy" },
+    { "src": "images/november2024-10.jpeg", "caption": "Perched on the windowsill in her safari pajamas" },
+    { "src": "images/november2024-11.jpeg", "caption": "On the move" },
+    { "src": "images/november2024-12.jpeg", "caption": "A little 'shh' on the alphabet mat" },
+    { "src": "images/november2024-13.jpeg", "caption": "Trying on Daddy's shoes for size" },
+    { "src": "images/november2024-14.jpeg", "caption": "A thoughtful look" },
+    { "src": "images/november2024-15.jpeg", "caption": "Sitting on the suitcase, ready for the next adventure" },
+    { "src": "images/november2024-16.jpeg", "caption": "Cuddled up with Daddy" },
+    { "src": "images/november2024-17.jpeg", "caption": "Daddy being silly with a topknot" },
+    { "src": "images/november2024-18.gif", "caption": "On the go" }
   ]
 }
