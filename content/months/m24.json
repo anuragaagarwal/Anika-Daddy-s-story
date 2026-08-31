@@ -1,18 +1,42 @@
 {
   "id": "m24",
-  "eyebrow": "1y 11m old",
+  "eyebrow": "23 months old",
   "title": "December 2024",
   "subtitle": "Add this month's photos and captions here.",
-  "note": "Placeholder note — the toddler years. What new word, step, or habit stood out this month?",
+  "note": "Placeholder note — you were becoming more and more of a person this month. What did you discover about her?",
   "journal": "",
   "photos": [
-    {
-      "src": "",
-      "caption": "caption goes here"
-    },
-    {
-      "src": "",
-      "caption": "caption goes here"
-    }
+    { "src": "images/december2024-01.jpeg", "caption": "A little AI dream — big hair, bigger attitude" },
+    { "src": "images/december2024-02.jpeg", "caption": "Same dream, in black and white" },
+    { "src": "images/december2024-03.jpeg", "caption": "An AI-imagined selfie with Daddy" },
+    { "src": "images/december2024-04.jpeg", "caption": "Dancing under the lights (AI-imagined)" },
+    { "src": "images/december2024-05.jpeg", "caption": "A dramatic moment, AI-imagined" },
+    { "src": "images/december2024-06.jpeg", "caption": "Dreaming among the clouds" },
+    { "src": "images/december2024-07.jpeg", "caption": "Another AI-imagined moment" },
+    { "src": "images/december2024-08.jpeg", "caption": "Exploring the coffee table" },
+    { "src": "images/december2024-09.jpeg", "caption": "A little \"shh\" on the couch" },
+    { "src": "images/december2024-10.jpeg", "caption": "All smiles with Daddy" },
+    { "src": "images/december2024-11.jpeg", "caption": "Another happy selfie" },
+    { "src": "images/december2024-12.jpeg", "caption": "A few expressions from the same day" },
+    { "src": "images/december2024-13.jpeg", "caption": "Holding onto the chair" },
+    { "src": "images/december2024-14.jpeg", "caption": "A curious look" },
+    { "src": "images/december2024-15.jpeg", "caption": "Standing tall in the crib" },
+    { "src": "images/december2024-16.jpeg", "caption": "Building with blocks by the teepee" },
+    { "src": "images/december2024-17.jpeg", "caption": "Reaching out from her basket" },
+    { "src": "images/december2024-18.gif", "caption": "Just being silly in her basket" },
+    { "src": "images/december2024-19.jpeg", "caption": "Snack time with Daddy" },
+    { "src": "images/december2024-20.jpeg", "caption": "More AI-imagined poses" },
+    { "src": "images/december2024-21.jpeg", "caption": "Learning to ride her trike" },
+    { "src": "images/december2024-22.jpeg", "caption": "Fast asleep" },
+    { "src": "images/december2024-23.jpeg", "caption": "Carrying her in style" },
+    { "src": "images/december2024-24.jpeg", "caption": "Borrowing Daddy's glasses" },
+    { "src": "images/december2024-25.jpeg", "caption": "Wide-eyed and curious" },
+    { "src": "images/december2024-26.jpeg", "caption": "Trying on a very big hat" },
+    { "src": "images/december2024-27.jpeg", "caption": "Peeking out of her teepee" },
+    { "src": "images/december2024-28.jpeg", "caption": "Upside down and flexible" },
+    { "src": "images/december2024-29.jpeg", "caption": "Getting cozy on the bed" },
+    { "src": "images/december2024-30.jpeg", "caption": "Deep in thought" },
+    { "src": "images/december2024-31.jpeg", "caption": "Pointing out something important" },
+    { "src": "images/december2024-32.jpeg", "caption": "A few more expressions from the same afternoon" }
   ]
 }
